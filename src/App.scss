@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+$primary-color: #FF6060;
 
 @mixin banniere {
     height: 200px;
@@ -15,21 +17,35 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.headerDiv {
-    flex-direction: row;
-    justify-content: stretch;
-    border: 2px solid red;
+@mixin margin {
+    margin: 50px;
 }
 
-.headerDiv button{
-    border: none;
-    background-color: white;
-    @include fontStyle;
+#root {
+    border: 2px solid red;
+    @include baseStyle;
+}
 
+.headerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include margin;
+}
+
+.headerNav {
+    @include baseStyle;
+}
+
+.headerLink{
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 0 0 0 20px;
+    margin: 30px 30 30 30;
+    color: $primary-color;
+    @include fontStyle;
 }
 
 .banniereAccueil {
     background-image: url("./Assets/Images/ImgAccueil.webp");
-    @include banniere;
-    @include baseStyle;
 }

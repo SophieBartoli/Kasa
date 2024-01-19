@@ -1,22 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
-.headerDiv {
-  flex-direction: row;
-  justify-content: stretch;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+#root {
   border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.headerDiv button {
-  border: none;
-  background-color: white;
+.headerDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+.headerNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerLink {
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 0 0 0 20px;
+  margin: 30px 30 30 30;
+  color: #FF6060;
   font-family: "Montserrat", sans-serif;
 }
 
 .banniereAccueil {
   background-image: url("./Assets/Images/ImgAccueil.webp");
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /*# sourceMappingURL=App.css.map */
