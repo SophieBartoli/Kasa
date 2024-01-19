@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Apropos from "./Components/Apropos";
+import Accueil from "./Components/Accueil";
+import Error from "./Components/Error";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+
+    ReactDOM.render(
+        <React.StrictMode>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Accueil />} />
+                    <Route path="/Apropos" element={<Apropos/>} />
+                    <Route path="*" element={<Error />} />
+                </Routes>
+            </Router>
+        </React.StrictMode>,
+        document.getElementById('root')
+    )
+
+};
 
 export default App;

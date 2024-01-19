@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+@mixin banniere {
+    height: 200px;
+}
+
+
+@mixin baseStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fontStyle {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headerDiv {
+    flex-direction: row;
+    justify-content: stretch;
+    border: 2px solid red;
+}
+
+.headerDiv button{
+    border: none;
+    background-color: white;
+    @include fontStyle;
+
+}
+
+.banniereAccueil {
+    background-image: url("./Assets/Images/ImgAccueil.webp");
+    @include banniere;
+    @include baseStyle;
+}
