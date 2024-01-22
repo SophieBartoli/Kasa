@@ -3,7 +3,9 @@
 $primary-color: #FF6060;
 
 @mixin banniere {
-    height: 200px;
+    height: 220px;
+    border-radius: 30px;
+    filter: brightness(70%);
 }
 
 
@@ -47,5 +49,22 @@ $primary-color: #FF6060;
 }
 
 .banniereAccueil {
-    background-image: url("./Assets/Images/ImgAccueil.webp");
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+}
+
+.banniereAccueil h1 {
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+}
+
+.banniereAccueil img {
+    position: relative;
+    z-index: 1;
+    height: 220px;
+    width: 100%;
+    @include banniere;
+    align-items: center;
 }

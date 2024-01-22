@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import Logement from "./Logement";
 import Footer from "./Footer";
+import ImgAccueil from '../Assets/Images/ImgAccueil.webp';
 
 const Accueil = () => {
 
@@ -19,6 +20,7 @@ const Accueil = () => {
         <div>
             <Header/>
             <div className="banniereAccueil">
+                <img src={ImgAccueil} alt="" /> 
                 <h1>Chez vous partout ailleurs</h1>
             </div>
             <div className="logement">
