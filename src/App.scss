@@ -12,7 +12,6 @@ $primary-color: #FF6060;
 @mixin baseStyle {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 @mixin fontStyle {
@@ -20,29 +19,39 @@ $primary-color: #FF6060;
 }
 
 @mixin margin {
-    margin: 50px;
+    margin: 0 0 40px 0;
+}
+
+@mixin images {
+    width: 330px;
+    height: 330px;
 }
 
 #root {
-    border: 2px solid red;
     @include baseStyle;
+}
+
+.accueilDiv {
+    width: 80%;
 }
 
 .headerDiv {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @include margin;
+    width: 100%;
+    @include margin
 }
 
 .headerNav {
     @include baseStyle;
+    align-items: center;
 }
 
 .headerLink{
     text-decoration: none;
     font-size: 1.5em;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 50px;
     margin: 30px 30 30 30;
     color: $primary-color;
     @include fontStyle;
@@ -51,13 +60,18 @@ $primary-color: #FF6060;
 .banniereAccueil {
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
+    align-items: center;
+    @include fontStyle;
+    @include margin;
 }
 
 .banniereAccueil h1 {
     position: relative;
     z-index: 2;
-    justify-content: center;
+    font-size: 3em;
+    margin: 0 0 0 -1000px;
+    color: white;
+    font-weight: 200;
 }
 
 .banniereAccueil img {
@@ -66,5 +80,54 @@ $primary-color: #FF6060;
     height: 220px;
     width: 100%;
     @include banniere;
+}
+
+.logement {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    background-color: #F6F6F6;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.logementDiv {
+    display: flex;
+    flex-direction: row;
+    @include images;
+}
+
+.logementDiv img {
+    position: relative;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 30px;
+    filter: brightness(70%);
+    @include images;
+}
+
+.locationTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    z-index: 2;
+    margin: 230px 0 0 -320px;
+    width: 200px;
+    font-size: 16px;
+    color: white;
+    font-weight: 100;
+    @include fontStyle;
+}
+
+.imagesDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F6F6F6;
+    border-radius: 30px;
+    width: 90%;
+    height: 95%;
 }

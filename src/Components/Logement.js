@@ -1,9 +1,10 @@
 const Logement = ( { data }) => {
-    console.log(data);
-    return <div key={data.id}>
-        <img className="locationImage" src={data.cover} alt=""/>
-        <h3 className="locationTitle">{data.title}</h3>
-    </div>
+        return <div key={data.id} className="logementDiv">
+                    <img className="locationImage" src={data.cover} alt=""/>
+                    <div className="locationTitle">
+                        <h3>{data.title}</h3>
+                    </div>
+                </div>
 };
 
 export default Logement;

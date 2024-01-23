@@ -17,17 +17,19 @@ const Accueil = () => {
     }, []);
     
     return (
-        <div>
+        <div className="accueilDiv">
             <Header/>
             <div className="banniereAccueil">
-                <img src={ImgAccueil} alt="" /> 
-                <h1>Chez vous partout ailleurs</h1>
+                <img src={ImgAccueil} alt=""/> 
+                <h1>Chez vous, partout et ailleurs</h1>
             </div>
             <div className="logement">
-                {logementData.length !== 0 ? logementData.map((elem) => {
-                    return <Logement key={elem.id} data={elem} />;
-                })
-                : null}
+                <div className="imagesDiv">
+                    {logementData.length !== 0 ? logementData.map((elem) => {
+                        return <Logement key={elem.id} data={elem} />;
+                    })
+                    : null}
+                </div>
             </div>
             <Footer/>
         </div>
