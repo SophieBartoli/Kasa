@@ -17,18 +17,20 @@ const Accueil = () => {
     }, []);
     
     return (
-        <div className="accueilDiv">
-            <Header/>
-            <div className="banniereAccueil">
-                <img src={ImgAccueil} alt=""/> 
-                <h1>Chez vous, partout et ailleurs</h1>
-            </div>
-            <div className="logement">
-                <div className="imagesDiv">
-                    {logementData.length !== 0 ? logementData.map((elem) => {
-                        return <Logement key={elem.id} data={elem} />;
-                    })
-                    : null}
+        <div className="rootDiv">
+            <div className="accueilDiv">
+                <Header/>
+                <div className="banniereAccueil">
+                    <img src={ImgAccueil} alt=""/> 
+                    <h1>Chez vous, partout et ailleurs</h1>
+                </div>
+                <div className="logement">
+                    <div className="imagesDiv">
+                        {logementData.length !== 0 ? logementData.map((elem) => {
+                            return <Logement key={elem.id} data={elem} />;
+                        })
+                        : null}
+                    </div>
                 </div>
             </div>
             <Footer/>

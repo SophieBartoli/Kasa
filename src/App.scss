@@ -11,7 +11,8 @@ $primary-color: #FF6060;
 
 @mixin baseStyle {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 @mixin fontStyle {
@@ -27,8 +28,10 @@ $primary-color: #FF6060;
     height: 330px;
 }
 
-#root {
+
+.rootDiv {
     @include baseStyle;
+    border: 2px solid green;
 }
 
 .accueilDiv {
@@ -44,7 +47,7 @@ $primary-color: #FF6060;
 }
 
 .headerNav {
-    @include baseStyle;
+    display: flex;
     align-items: center;
 }
 
@@ -59,17 +62,17 @@ $primary-color: #FF6060;
 
 .banniereAccueil {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     @include fontStyle;
     @include margin;
 }
 
 .banniereAccueil h1 {
-    position: relative;
+    position: absolute;
     z-index: 2;
     font-size: 3em;
-    margin: 0 0 0 -1000px;
     color: white;
     font-weight: 200;
 }
@@ -90,12 +93,14 @@ $primary-color: #FF6060;
     border-radius: 30px;
     width: 100%;
     height: 100%;
+    border: 2px solid blue;
 }
 
 .logementDiv {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     @include images;
+    border: 2px solid orange;
 }
 
 .logementDiv img {
@@ -110,14 +115,14 @@ $primary-color: #FF6060;
 .locationTitle {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    position: relative;
+    position: absolute;
     z-index: 2;
-    margin: 230px 0 0 -320px;
     width: 200px;
     font-size: 16px;
     color: white;
     font-weight: 100;
+    text-decoration: none;
+    margin: 230px 0 0 10px;
     @include fontStyle;
 }
 
@@ -130,4 +135,13 @@ $primary-color: #FF6060;
     border-radius: 30px;
     width: 90%;
     height: 95%;
+}
+
+.footerDiv {
+    background-color: black;
+    width: 100%;
+}
+
+.footerDiv p {
+    color: white;
 }
