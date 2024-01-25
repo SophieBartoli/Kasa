@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Logement = ({ data }) => {
 	return (
 		<Link
-			to="/Logement"
+			to={`logement/${data.id}`}
 			state={{ logementData: data }}
 			key={data.id}
 			className="logementDiv"

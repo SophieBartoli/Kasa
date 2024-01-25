@@ -15,7 +15,7 @@ const App = () => {
                         <Route path="/" element={<Accueil />} />
                         <Route path="/Apropos" element={<Apropos/>} />
                         <Route path="*" element={<Error />} />
-                        <Route path="/Logement" element={<PageLogement />} />
+                        <Route path="/logement/:id" element={<PageLogement />} />
                     </Routes>
                 </Router>
             </React.StrictMode>,
