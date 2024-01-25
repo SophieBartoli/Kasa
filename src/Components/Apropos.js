@@ -4,18 +4,30 @@ import Header from './Header';
 
 const Apropos = () => {
     return (
-        <div>
-          <Header/>
-          <img src={ImgApropos} alt=""/>
-          <div>
-            <p>Fiabilité</p>
-            <button/>
-            <p>Respect</p>
-            <button/>
-            <p>Service</p>
-            <button/>
-            <p>Sécurité</p>
-            <button/>
+        <div className='rootDiv'>
+          <div className="pageDiv">
+            <Header/>
+            <div className="banniereAccueil">
+             <img src={ImgApropos} alt=""/>
+            </div>
+          </div>
+          <div className="bodyDiv">
+            <div className="buttonDiv">
+              <p>Fiabilité</p>
+              <button/>
+            </div>
+            <div className="buttonDiv">
+              <p>Respect</p>
+              <button/>
+            </div>
+            <div className="buttonDiv">
+              <p>Service</p>
+              <button/>
+            </div>
+            <div className="buttonDiv">
+              <p>Sécurité</p>
+              <button/>
+            </div>
           </div>
           <Footer/>
         </div>

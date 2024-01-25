@@ -18,7 +18,7 @@ const Accueil = () => {
     
     return (
         <div className="rootDiv">
-            <div className="accueilDiv">
+            <div className="pageDiv">
                 <Header/>
                 <div className="banniereAccueil">
                     <img src={ImgAccueil} alt=""/> 
