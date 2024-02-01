@@ -2,10 +2,12 @@ import { useParams } from "react-router-dom";
 import Header from "./Header.js"
 import { useEffect, useState } from "react";
 import Footer from "./Footer.js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PageLogement = () => {
 	let { id } = useParams();
 	const [logementData, setLocationData] = useState([]);
+	const tags = logementData.tags;
 
 
 	useEffect(() => {
@@ -26,34 +28,55 @@ const PageLogement = () => {
 
 	return (
 		<div className="rootDiv">
-			<div className="pageDiv">
-				<Header/>
-			</div>
-			<div>
-				<img src={logementData.pictures} alt=""/>
-			</div>
-			<div>
-				<h1>{logementData.title}</h1>
-				<div>
-					<p>{logementData.host.name}</p>
-					<img src={logementData.host.picture} alt=""/>
+			{ logementData.length !== 0 ?
+			<>
+				<div className="pageDiv">
+					<Header/>
 				</div>
-			</div>
-			<h2>{logementData.location}</h2>
-			<div>
-				<p>{logementData.tags}</p>
-			</div>
-			<div>
-				<div>
-					<p>Description</p>
-					<button/>
+				<div className="carousel">
+					<img className="imageCarousel" src={logementData.pictures[0]} alt=""/>
+					<div className="carouselButtons">
+						<button/>
+						<FontAwesomeIcon icon="fa-solid fa-angle-right" />
+						<button/>
+					</div>
+					<p>1/4</p>
 				</div>
-				<div>
-					<p>Équipements</p>
-					<button/>
+
+
+				<div className="pageLogementBody">
+					<div className="bodyComponent">
+						<h1>{logementData.title}</h1>
+						<h2>{logementData.location}</h2>
+							<ul className="tagsUl">
+								{tags.map(tag => (
+									<li key={tag} className="tags">{tag}</li>
+								))}
+							</ul>
+						<div className="componentButton">
+							<p>Description</p>
+							<button/>
+						</div>		
+					</div>
+
+					<div className="bodyComponent">
+						<div className="componentRight">
+							<div className="hostDiv">
+								<p>{logementData.host.name}</p>
+								<img src={logementData.host.picture} alt=""/>
+							</div>
+							<p>ici seront les etoiles</p>
+							<div className="componentButton">
+								<p>Équipements</p>
+								<button/>
+							</div>	
+						</div>	
+					</div>
 				</div>
-			</div>
-			<Footer/>
+				<Footer/>
+			</>
+			: null
+			}
 		</div>
 	);
 };

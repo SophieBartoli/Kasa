@@ -28,7 +28,15 @@ $primary-color: #FF6060;
     height: 330px;
 }
 
+@mixin button {
+    height: 55px;
+    background-color: $primary-color;
+}
 
+@mixin buttonFont {
+    color: white;
+    margin: 0 0 0 15px;
+}
 
 //// CSS page accueil ////
 
@@ -162,24 +170,22 @@ $primary-color: #FF6060;
 }
 
 
-//// CSS page accueil ////
+//// CSS page a propos ////
 
 .buttonDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 55px;
     width: 1000px;
-    background-color: $primary-color;
-    border-radius: 5px;
     margin: 0 0 30px 0;
+    border-radius: 5px;
+    @include button;
 }
 
 .buttonDiv p {
-    color: white;
     font-size: 1.4em;
-    margin: 0 0 0 15px;
+    @include buttonFont;
     @include fontStyle;
 }
 
@@ -190,3 +196,136 @@ $primary-color: #FF6060;
 
 //// CSS pages logements ////
 
+.carousel {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageCarousel {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.carouselButtons {
+    display: flex;
+    position: absolute;
+    width: 75%;
+    z-index: 2;
+    justify-content: space-between;
+}
+
+.carousel button {
+    height: 50px;
+}
+
+.carousel p {
+    position: absolute;
+    z-index: 3;
+    margin: 300px 0 0 0;
+    @include fontStyle;
+    color: white;
+    font-size: 1.1em;
+}
+
+.pageLogementBody {
+    margin: 30px 0 0 0;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bodyComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    justify-content: space-between;
+    color: $primary-color;
+    @include fontStyle;
+}
+
+.componentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    height: 100%;
+}
+
+.componentButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    border-radius: 10px;
+    margin: 0px 0 0px 0;
+    @include button;
+}
+
+.componentButton button {
+    margin: 0 20px 0 0;
+}
+
+.componentButton p {
+    @include buttonFont;
+    @include fontStyle;
+}
+
+.bodyComponent h1 {
+    font-size: 2.3em;
+    margin: 0 0 0 0;
+    font-weight: 100;
+}
+
+.bodyComponent h2 {
+    font-size: 1.2em;
+    margin: 0px 0 0 0;
+    font-weight: 100;
+}
+
+.bodyComponent ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.tags {
+    list-style-type: none;
+    margin: 0 10px 0 0;
+    padding: 0 30px 0 30px;
+    background-color: $primary-color;
+    @include fontStyle;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.8em;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.hostDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.hostDiv img {
+    height: 70px;
+    border-radius: 100%;
+    margin: 0 0 0 10px;
+}
+
+.hostDiv p {
+    text-align: end;
+    width: 100px;
+    font-size: 1.1em;
+}
