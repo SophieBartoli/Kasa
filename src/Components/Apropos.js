@@ -1,4 +1,6 @@
 import ImgApropos from '../Assets/Images/ImgApropos.webp';
+import Banner from './Banner';
+import Collapse from './Collapse';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -7,27 +9,19 @@ const Apropos = () => {
         <div className='rootDiv'>
           <div className="pageDiv">
             <Header/>
-            <div className="banniereAccueil">
-             <img src={ImgApropos} alt=""/>
-            </div>
+            <Banner
+              imgSrc={ImgApropos}
+              />
           </div>
           <div className="bodyDiv">
-            <div className="buttonDiv">
-              <p>Fiabilité</p>
-              <button/>
-            </div>
-            <div className="buttonDiv">
-              <p>Respect</p>
-              <button/>
-            </div>
-            <div className="buttonDiv">
-              <p>Service</p>
-              <button/>
-            </div>
-            <div className="buttonDiv">
-              <p>Sécurité</p>
-              <button/>
-            </div>
+            <Collapse
+              collapseText={"Fiabilité"}/>
+            <Collapse
+              collapseText={"Respect"}/>
+            <Collapse
+              collapseText={"Service"}/>
+            <Collapse
+              collapseText={"Sécurité"}/>
           </div>
           <Footer/>
         </div>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import Logement from "./Logement";
+import Cards from "./Cards";
 import Footer from "./Footer";
 import ImgAccueil from '../Assets/Images/ImgAccueil.webp';
+import Banner from "./Banner";
 
 const Accueil = () => {
 
@@ -20,14 +21,13 @@ const Accueil = () => {
         <div className="rootDiv">
             <div className="pageDiv">
                 <Header/>
-                <div className="banniereAccueil">
-                    <img src={ImgAccueil} alt=""/> 
-                    <h1>Chez vous, partout et ailleurs</h1>
-                </div>
+                <Banner
+                    imgSrc={ImgAccueil} 
+                    imgText={"Chez vous, partout et ailleurs"}/>
                 <div className="logement">
                     <div className="imagesDiv">
                         {logementData.length !== 0 ? logementData.map((elem) => {
-                            return <Logement key={elem.id} data={elem} />;
+                            return <Cards key={elem.id} data={elem} />;
                         })
                         : null}
                     </div>

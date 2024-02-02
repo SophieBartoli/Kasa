@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Logement = ({ data }) => {
+const Cards = ({ data }) => {
 	return (
 		<Link
 			to={`logement/${data.id}`}
@@ -16,4 +16,4 @@ const Logement = ({ data }) => {
 	);
 };
 
-export default Logement;
+export default Cards;

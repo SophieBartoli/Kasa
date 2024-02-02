@@ -3,8 +3,13 @@ import Header from "./Header.js"
 import { useEffect, useState } from "react";
 import Footer from "./Footer.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Collapse from "./Collapse.js";
 
-const PageLogement = () => {
+const Logements = () => {
 	let { id } = useParams();
 	const [logementData, setLocationData] = useState([]);
 	const tags = logementData.tags;
@@ -37,7 +42,6 @@ const PageLogement = () => {
 					<img className="imageCarousel" src={logementData.pictures[0]} alt=""/>
 					<div className="carouselButtons">
 						<button/>
-						<FontAwesomeIcon icon="fa-solid fa-angle-right" />
 						<button/>
 					</div>
 					<p>1/4</p>
@@ -54,8 +58,7 @@ const PageLogement = () => {
 								))}
 							</ul>
 						<div className="componentButton">
-							<p>Description</p>
-							<button/>
+							<Collapse collapseText={"Description"}/>
 						</div>		
 					</div>
 
@@ -65,10 +68,13 @@ const PageLogement = () => {
 								<p>{logementData.host.name}</p>
 								<img src={logementData.host.picture} alt=""/>
 							</div>
-							<p>ici seront les etoiles</p>
+							<FontAwesomeIcon icon={faStar} size="2x" color="blue" />
 							<div className="componentButton">
-								<p>Équipements</p>
-								<button/>
+								<Collapse collapseText={"Équipements"}/>
+
+								<FontAwesomeIcon icon={faAngleRight} size="2x" color="blue" />
+								<FontAwesomeIcon icon={faAngleLeft} size="2x" color="blue" />
+								<FontAwesomeIcon icon={faAngleUp} size="2x" color="blue" />
 							</div>	
 						</div>	
 					</div>
@@ -81,4 +87,4 @@ const PageLogement = () => {
 	);
 };
 
-export default PageLogement;
+export default Logements;

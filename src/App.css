@@ -31,7 +31,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.banniereAccueil {
+.banniere {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,7 @@
   margin: 0 0 40px 0;
 }
 
-.banniereAccueil h1 {
+.banniere h1 {
   position: absolute;
   z-index: 2;
   font-size: 3em;
@@ -48,7 +48,7 @@
   font-weight: 200;
 }
 
-.banniereAccueil img {
+.banniere img {
   position: relative;
   z-index: 1;
   height: 220px;
@@ -154,7 +154,14 @@
 }
 
 .buttonDiv button {
-  margin: 0 20px 0 0;
+  margin: 0 10px 0 0;
+  padding: 5px;
+  border: none;
+  background-color: #FF6060;
+  font-size: 2em;
+}
+.buttonDiv button :hover {
+  cursor: pointer;
 }
 
 .carousel {

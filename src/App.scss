@@ -70,7 +70,7 @@ $primary-color: #FF6060;
     @include fontStyle;
 }
 
-.banniereAccueil {
+.banniere {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +79,7 @@ $primary-color: #FF6060;
     @include margin;
 }
 
-.banniereAccueil h1 {
+.banniere h1 {
     position: absolute;
     z-index: 2;
     font-size: 3em;
@@ -87,7 +87,7 @@ $primary-color: #FF6060;
     font-weight: 200;
 }
 
-.banniereAccueil img {
+.banniere img {
     position: relative;
     z-index: 1;
     height: 220px;
@@ -190,7 +190,15 @@ $primary-color: #FF6060;
 }
 
 .buttonDiv button {
-    margin: 0 20px 0 0;
+    margin: 0 10px 0 0;
+    padding: 5px;
+    border: none;
+    background-color: $primary-color;
+    font-size: 2em;
+
+    :hover {
+        cursor: pointer;
+    }
 }
 
 
