@@ -38,6 +38,17 @@ $primary-color: #FF6060;
     margin: 0 0 0 15px;
 }
 
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+}
+
 //// CSS page accueil ////
 
 .rootDiv {
@@ -49,11 +60,10 @@ $primary-color: #FF6060;
 }
 
 .headerDiv {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    @include margin
+    @include margin;
+    @include row;
 }
 
 .headerNav {
@@ -71,28 +81,27 @@ $primary-color: #FF6060;
 }
 
 .banniere {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     @include fontStyle;
     @include margin;
-}
+    @include column;
 
-.banniere h1 {
-    position: absolute;
-    z-index: 2;
-    font-size: 3em;
-    color: white;
-    font-weight: 200;
-}
+    h1 {
+        position: absolute;
+        z-index: 2;
+        font-size: 3em;
+        color: white;
+        font-weight: 200;
+    }
 
-.banniere img {
-    position: relative;
-    z-index: 1;
-    height: 220px;
-    width: 100%;
-    @include banniere;
+    img {
+        position: relative;
+        z-index: 1;
+        height: 220px;
+        width: 100%;
+        @include banniere;
+    }
 }
 
 .logement {
@@ -106,24 +115,21 @@ $primary-color: #FF6060;
 }
 
 .logementDiv {
-    display: flex;
-    flex-direction: column;
     margin: 0 0 45px 0;
     @include images;
-}
+    @include column;
 
-.logementDiv img {
-    position: relative;
-    object-fit: cover;
-    z-index: 1;
-    border-radius: 30px;
-    filter: brightness(70%);
-    @include images;
+    img {
+        position: relative;
+        object-fit: cover;
+        z-index: 1;
+        border-radius: 30px;
+        filter: brightness(70%);
+        @include images;
+    }
 }
 
 .locationTitle {
-    display: flex;
-    flex-direction: column;
     position: absolute;
     z-index: 2;
     width: 200px;
@@ -133,17 +139,17 @@ $primary-color: #FF6060;
     text-decoration: none;
     margin: 230px 0 0 10px;
     @include fontStyle;
+    @include column;
 }
 
 .imagesDiv {
-    display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-between;
     background-color: #F6F6F6;
     border-radius: 30px;
     width: 90%;
     height: 95%;
+    @include row;
 }
 
 .footerDiv {
@@ -152,64 +158,75 @@ $primary-color: #FF6060;
     height: 200px;
     margin: 40px 0 0 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+    @include column;
 
-.footerDiv img {
-    width: 150px;
-    height: auto;
-}
+    img {
+        width: 150px;
+        height: auto;
+    }
 
-.footerDiv p {
-    color: white;
-    font-size: 1.5em;
-    margin: 30px 0 0 0;
-    @include fontStyle;
+    p {
+        color: white;
+        font-size: 1.5em;
+        margin: 30px 0 0 0;
+        @include fontStyle;
+    }
 }
 
 
 //// CSS page a propos ////
 
 .buttonDiv {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 1000px;
     margin: 0 0 30px 0;
     border-radius: 5px;
     @include button;
-}
+    @include row;
 
-.buttonDiv p {
-    font-size: 1.4em;
-    @include buttonFont;
-    @include fontStyle;
-}
+    p {
+        font-size: 1.4em;
+        @include buttonFont;
+        @include fontStyle;
+    }
 
-.buttonDiv button {
-    margin: 0 10px 0 0;
-    padding: 5px;
-    border: none;
-    background-color: $primary-color;
-    font-size: 2em;
-
-    :hover {
-        cursor: pointer;
+    button {
+        margin: 0 10px 0 0;
+        padding: 5px;
+        border: none;
+        background-color: $primary-color;
+        font-size: 2em;
+    
+        :hover {
+            cursor: pointer;
+        }
     }
 }
-
 
 //// CSS pages logements ////
 
 .carousel {
     width: 80%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include column;
+
+    button {
+        height: 50px;
+    }
+
+    p {
+        position: absolute;
+        z-index: 3;
+        margin: 300px 0 0 0;
+        @include fontStyle;
+        color: white;
+        font-size: 1.1em;
+    }
 }
 
 .imageCarousel {
@@ -229,82 +246,65 @@ $primary-color: #FF6060;
     justify-content: space-between;
 }
 
-.carousel button {
-    height: 50px;
-}
-
-.carousel p {
-    position: absolute;
-    z-index: 3;
-    margin: 300px 0 0 0;
-    @include fontStyle;
-    color: white;
-    font-size: 1.1em;
-}
-
 .pageLogementBody {
     margin: 30px 0 0 0;
     width: 80%;
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    @include row;
 }
 
 .bodyComponent {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: 200px;
     justify-content: space-between;
     color: $primary-color;
     @include fontStyle;
+    @include column;
+
+    h1 {
+        font-size: 2.3em;
+        margin: 0 0 0 0;
+        font-weight: 100;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin: 0px 0 0 0;
+        font-weight: 100;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-inline-start: 0;
+        @include row;
+    }
+    
 }
 
 .componentRight {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: end;
     height: 100%;
+    @include column;
 }
 
 .componentButton {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 95%;
     border-radius: 10px;
     margin: 0px 0 0px 0;
     @include button;
-}
+    @include row;
 
-.componentButton button {
-    margin: 0 20px 0 0;
-}
+    button {
+        margin: 0 20px 0 0;
+    }
 
-.componentButton p {
-    @include buttonFont;
-    @include fontStyle;
-}
-
-.bodyComponent h1 {
-    font-size: 2.3em;
-    margin: 0 0 0 0;
-    font-weight: 100;
-}
-
-.bodyComponent h2 {
-    font-size: 1.2em;
-    margin: 0px 0 0 0;
-    font-weight: 100;
-}
-
-.bodyComponent ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding-inline-start: 0;
+    p {
+        @include buttonFont;
+        @include fontStyle;
+    }
 }
 
 .tags {
@@ -322,18 +322,53 @@ $primary-color: #FF6060;
 }
 
 .hostDiv {
-    display: flex;
-    flex-direction: row;
+    @include row;
+
+    img {
+        height: 70px;
+        border-radius: 100%;
+        margin: 0 0 0 10px;
+    }
+
+    p {
+        text-align: end;
+        width: 100px;
+        font-size: 1.1em;
+    }
+    
 }
 
-.hostDiv img {
-    height: 70px;
-    border-radius: 100%;
-    margin: 0 0 0 10px;
+
+//// CSS page erreur ////
+
+.errorBody {
+    align-items: center;
+    color: $primary-color;
+    @include fontStyle;
+    @include column;
+
+    h1 {
+        font-size: 14em;
+        margin: 10px 0 50px 0;
+    }
+
+    h2 {
+        font-weight: normal;
+    }
 }
 
-.hostDiv p {
-    text-align: end;
-    width: 100px;
-    font-size: 1.1em;
+
+.errorNav {
+    margin: 50px 0 50px 0;
 }
+
+.errorLink {
+    color: $primary-color;
+
+    :visited {
+        color: $primary-color;
+    }
+}
+
+
+

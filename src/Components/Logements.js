@@ -74,7 +74,6 @@ const Logements = () => {
 
 								<FontAwesomeIcon icon={faAngleRight} size="2x" color="blue" />
 								<FontAwesomeIcon icon={faAngleLeft} size="2x" color="blue" />
-								<FontAwesomeIcon icon={faAngleUp} size="2x" color="blue" />
 							</div>	
 						</div>	
 					</div>

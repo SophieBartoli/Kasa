@@ -10,11 +10,11 @@
 }
 
 .headerDiv {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
   margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: row;
 }
 
 .headerNav {
@@ -32,14 +32,13 @@
 }
 
 .banniere {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Montserrat", sans-serif;
   margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
 }
-
 .banniere h1 {
   position: absolute;
   z-index: 2;
@@ -47,7 +46,6 @@
   color: white;
   font-weight: 200;
 }
-
 .banniere img {
   position: relative;
   z-index: 1;
@@ -69,13 +67,12 @@
 }
 
 .logementDiv {
-  display: flex;
-  flex-direction: column;
   margin: 0 0 45px 0;
   width: 330px;
   height: 330px;
+  display: flex;
+  flex-direction: column;
 }
-
 .logementDiv img {
   position: relative;
   object-fit: cover;
@@ -87,8 +84,6 @@
 }
 
 .locationTitle {
-  display: flex;
-  flex-direction: column;
   position: absolute;
   z-index: 2;
   width: 200px;
@@ -98,17 +93,19 @@
   text-decoration: none;
   margin: 230px 0 0 10px;
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .imagesDiv {
-  display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: space-between;
   background-color: #F6F6F6;
   border-radius: 30px;
   width: 90%;
   height: 95%;
+  display: flex;
+  flex-direction: row;
 }
 
 .footerDiv {
@@ -117,16 +114,15 @@
   height: 200px;
   margin: 40px 0 0 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
-
 .footerDiv img {
   width: 150px;
   height: auto;
 }
-
 .footerDiv p {
   color: white;
   font-size: 1.5em;
@@ -135,8 +131,6 @@
 }
 
 .buttonDiv {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 1000px;
@@ -144,15 +138,15 @@
   border-radius: 5px;
   height: 55px;
   background-color: #FF6060;
+  display: flex;
+  flex-direction: row;
 }
-
 .buttonDiv p {
   font-size: 1.4em;
   color: white;
   margin: 0 0 0 15px;
   font-family: "Montserrat", sans-serif;
 }
-
 .buttonDiv button {
   margin: 0 10px 0 0;
   padding: 5px;
@@ -167,9 +161,21 @@
 .carousel {
   width: 80%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.carousel button {
+  height: 50px;
+}
+.carousel p {
+  position: absolute;
+  z-index: 3;
+  margin: 300px 0 0 0;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 1.1em;
 }
 
 .imageCarousel {
@@ -189,48 +195,49 @@
   justify-content: space-between;
 }
 
-.carousel button {
-  height: 50px;
-}
-
-.carousel p {
-  position: absolute;
-  z-index: 3;
-  margin: 300px 0 0 0;
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  font-size: 1.1em;
-}
-
 .pageLogementBody {
   margin: 30px 0 0 0;
   width: 80%;
+  justify-content: space-between;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .bodyComponent {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 200px;
   justify-content: space-between;
   color: #FF6060;
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.bodyComponent h1 {
+  font-size: 2.3em;
+  margin: 0 0 0 0;
+  font-weight: 100;
+}
+.bodyComponent h2 {
+  font-size: 1.2em;
+  margin: 0px 0 0 0;
+  font-weight: 100;
+}
+.bodyComponent ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: row;
 }
 
 .componentRight {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: end;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .componentButton {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 95%;
@@ -238,35 +245,16 @@
   margin: 0px 0 0px 0;
   height: 55px;
   background-color: #FF6060;
+  display: flex;
+  flex-direction: row;
 }
-
 .componentButton button {
   margin: 0 20px 0 0;
 }
-
 .componentButton p {
   color: white;
   margin: 0 0 0 15px;
   font-family: "Montserrat", sans-serif;
-}
-
-.bodyComponent h1 {
-  font-size: 2.3em;
-  margin: 0 0 0 0;
-  font-weight: 100;
-}
-
-.bodyComponent h2 {
-  font-size: 1.2em;
-  margin: 0px 0 0 0;
-  font-weight: 100;
-}
-
-.bodyComponent ul {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  padding-inline-start: 0;
 }
 
 .tags {
@@ -287,17 +275,41 @@
   display: flex;
   flex-direction: row;
 }
-
 .hostDiv img {
   height: 70px;
   border-radius: 100%;
   margin: 0 0 0 10px;
 }
-
 .hostDiv p {
   text-align: end;
   width: 100px;
   font-size: 1.1em;
+}
+
+.errorBody {
+  align-items: center;
+  color: #FF6060;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.errorBody h1 {
+  font-size: 14em;
+  margin: 10px 0 50px 0;
+}
+.errorBody h2 {
+  font-weight: normal;
+}
+
+.errorNav {
+  margin: 50px 0 50px 0;
+}
+
+.errorLink {
+  color: #FF6060;
+}
+.errorLink :visited {
+  color: #FF6060;
 }
 
 /*# sourceMappingURL=App.css.map */

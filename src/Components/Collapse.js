@@ -7,10 +7,26 @@ const Collapse = ({ collapseText }) => {
     const [open, setOpen] = useState(false);
     const [close, setClose] = useState(true);
 
+    function Example() { 
+        if (close) {
+            return ( 
+                <>
+                    onClick={() => {setOpen(true); setClose(false)}}
+                </>
+            )}
+            return (
+                <> 
+                    onClick={() => {setClose(true); setOpen(false)}}
+                </>
+            )};
+
+
     return (
         <div className="buttonDiv">
             <p>{ collapseText }</p>
-            <button onClick={() => {setOpen(true); setClose(false)}}><FontAwesomeIcon icon={faAngleUp} color="white"/></button>
+            <button onClick={ Example }><FontAwesomeIcon icon={faAngleUp} color="white"/></button>
+            { open && <p> Loading... </p> }
+
         </div>
     );
 }
