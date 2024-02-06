@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
-const Collapse = ({ collapseText }) => {
+const Collapse = ({ collapseText, collapseDescription }) => {
 
     const [open, setOpen] = useState(false);
-    const [close, setClose] = useState(true);
 
-    function Example() { 
-        if (close) {
-            return ( 
-                <>
-                    onClick={() => {setOpen(true); setClose(false)}}
-                </>
-            )}
-            return (
-                <> 
-                    onClick={() => {setClose(true); setOpen(false)}}
-                </>
-            )};
-
+    function Toggle() {
+        return setOpen(!open);
+    }
 
     return (
-        <div className="buttonDiv">
-            <p>{ collapseText }</p>
-            <button onClick={ Example }><FontAwesomeIcon icon={faAngleUp} color="white"/></button>
-            { open && <p> Loading... </p> }
-
+        <div>
+            <div className="buttonDiv"> 
+                <p className="collapseText">{ collapseText }</p>
+                <button onClick={ Toggle }><FontAwesomeIcon icon={faAngleUp} color="white"/></button>
+            </div>
+            <div className='descriptionDiv'>
+                {open && <p className="collapseDescription"> { collapseDescription } </p>}
+            </div>
         </div>
     );
 }

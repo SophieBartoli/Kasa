@@ -6,8 +6,10 @@ import Apropos from "./Components/Apropos";
 import Accueil from "./Components/Accueil";
 import Error from "./Components/Error";
 import Logements from "./Components/Logements";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
+
         ReactDOM.render(
             <React.StrictMode>
                 <Router>
@@ -15,7 +17,8 @@ const App = () => {
                         <Route path="/" element={<Accueil />} />
                         <Route path="/Apropos" element={<Apropos/>} />
                         <Route path="*" element={<Error />} />
-                        <Route path="/logement/:id" element={<Logements/>} />
+                         <Route path="/logement/:id" element={<Logements/>} />
+                        
                     </Routes>
                 </Router>
             </React.StrictMode>,

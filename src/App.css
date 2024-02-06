@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 .rootDiv {
   display: flex;
   flex-direction: column;
@@ -134,7 +135,6 @@
   align-items: center;
   justify-content: space-between;
   width: 1000px;
-  margin: 0 0 30px 0;
   border-radius: 5px;
   height: 55px;
   background-color: #FF6060;
@@ -142,7 +142,7 @@
   flex-direction: row;
 }
 .buttonDiv p {
-  font-size: 1.4em;
+  font-size: 1.6em;
   color: white;
   margin: 0 0 0 15px;
   font-family: "Montserrat", sans-serif;
@@ -310,6 +310,23 @@
 }
 .errorLink :visited {
   color: #FF6060;
+}
+
+.descriptionDiv {
+  margin: 0 0 30px 0;
+  width: 1000px;
+}
+
+.collapseDescription {
+  color: #FF6060;
+  background-color: #F6F6F6;
+  margin: 0 0 0 0;
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
 }
 
 /*# sourceMappingURL=App.css.map */
