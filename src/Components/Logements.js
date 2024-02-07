@@ -49,7 +49,7 @@ const Logements = () => {
 
 
 				<div className="pageLogementBody">
-					<div className="bodyComponent">
+					<div className="componentLeft">
 						<h1>{logementData.title}</h1>
 						<h2>{logementData.location}</h2>
 							<ul className="tagsUl">
@@ -62,8 +62,7 @@ const Logements = () => {
 						</div>		
 					</div>
 
-					<div className="bodyComponent">
-						<div className="componentRight">
+					<div className="componentRight">
 							<div className="hostDiv">
 								<p>{logementData.host.name}</p>
 								<img src={logementData.host.picture} alt=""/>
@@ -71,11 +70,7 @@ const Logements = () => {
 							<FontAwesomeIcon icon={faStar} size="2x" color="blue" />
 							<div className="componentButton">
 								<Collapse collapseText={"Équipements"}/>
-
-								<FontAwesomeIcon icon={faAngleRight} size="2x" color="blue" />
-								<FontAwesomeIcon icon={faAngleLeft} size="2x" color="blue" />
 							</div>	
-						</div>	
 					</div>
 				</div>
 				<Footer/>
