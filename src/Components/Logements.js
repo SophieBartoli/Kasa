@@ -3,16 +3,27 @@ import Header from "./Header.js"
 import { useEffect, useState } from "react";
 import Footer from "./Footer.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Collapse from "./Collapse.js";
+import Slideshow from "./Slideshow.js";
 
 const Logements = () => {
 	let { id } = useParams();
 	const [logementData, setLocationData] = useState([]);
 	const tags = logementData.tags;
+	const descriptions = logementData.description;
+	const equipements = logementData.equipments;
+
+	const equipementsLi = () => {
+		
+		return (
+			<>
+				{equipements.map( equipement => (
+					<li key={equipement} className="equipements">{equipement}</li>
+				))}
+			</>
+		)
+	}
 
 
 	useEffect(() => {
@@ -39,6 +50,7 @@ const Logements = () => {
 					<Header/>
 				</div>
 				<div className="carousel">
+					<Slideshow/>
 					<img className="imageCarousel" src={logementData.pictures[0]} alt=""/>
 					<div className="carouselButtons">
 						<button/>
@@ -56,10 +68,7 @@ const Logements = () => {
 								{tags.map(tag => (
 									<li key={tag} className="tags">{tag}</li>
 								))}
-							</ul>
-						<div className="componentButton">
-							<Collapse collapseText={"Description"}/>
-						</div>		
+							</ul>	
 					</div>
 
 					<div className="componentRight">
@@ -67,12 +76,23 @@ const Logements = () => {
 								<p>{logementData.host.name}</p>
 								<img src={logementData.host.picture} alt=""/>
 							</div>
-							<FontAwesomeIcon icon={faStar} size="2x" color="blue" />
-							<div className="componentButton">
-								<Collapse collapseText={"Équipements"}/>
-							</div>	
+							<div className="etoilesDiv">
+								<FontAwesomeIcon icon={faStar} className="etoile"/>
+								<FontAwesomeIcon icon={faStar} className="etoile"/>
+								<FontAwesomeIcon icon={faStar} className="etoile"/>
+								<FontAwesomeIcon icon={faStar} className="etoile"/>
+								<FontAwesomeIcon icon={faStar} className="etoile"/>	
+							</div>
 					</div>
 				</div>
+				<div className="componentButtons">
+					<div className="buttonLeft">
+						<Collapse collapseText={"Description"} collapseDescription={ descriptions }/>
+					</div>
+					<div className="buttonRight">
+						<Collapse collapseText={"Équipements"} collapseUl={ equipements }/>
+					</div>
+				</div>	
 				<Footer/>
 			</>
 			: null

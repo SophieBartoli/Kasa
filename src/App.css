@@ -220,21 +220,19 @@
 
 .componentLeft {
   width: 100%;
-  height: 200px;
   color: #FF6060;
-  justify-content: end;
   font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
 }
 .componentLeft h1 {
   font-size: 2.3em;
-  margin: 0 0 0 0;
+  margin: 10px 0 0 0;
   font-weight: 100;
 }
 .componentLeft h2 {
   font-size: 1.2em;
-  margin: 0px 0 0 0;
+  margin: 10px 0 10px 0;
   font-weight: 100;
 }
 .componentLeft ul {
@@ -247,21 +245,19 @@
 .componentRight {
   align-items: end;
   width: 100%;
-  height: 200px;
   color: #FF6060;
-  justify-content: end;
   font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
 }
 .componentRight h1 {
   font-size: 2.3em;
-  margin: 0 0 0 0;
+  margin: 10px 0 0 0;
   font-weight: 100;
 }
 .componentRight h2 {
   font-size: 1.2em;
-  margin: 0px 0 0 0;
+  margin: 10px 0 10px 0;
   font-weight: 100;
 }
 .componentRight ul {
@@ -271,45 +267,114 @@
   flex-direction: row;
 }
 
-.componentRight .componentButton {
+.componentButtons {
   display: flex;
-  justify-content: end;
-  width: 95%;
-}
-
-.componentButton {
-  border: 2px solid red;
-  width: 100%;
-  align-items: end;
-}
-
-.componentButton .buttonDiv {
-  border: 2px solid green;
-  align-items: center;
+  flex-direction: row;
+  width: 80%;
   justify-content: space-between;
+}
+
+.buttonLeft {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.buttonLeft .collapseDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.buttonLeft .collapseDiv .buttonDiv {
   width: 95%;
   border-radius: 10px;
-  margin: 0px 0 0px 0;
+  align-items: center;
+  justify-content: space-between;
   height: 55px;
   background-color: #FF6060;
   display: flex;
   flex-direction: row;
 }
-.componentButton .buttonDiv p {
-  font-size: 1.6em;
+.buttonLeft .collapseDiv .buttonDiv p {
+  font-size: 1.4em;
   color: white;
   margin: 0 0 0 15px;
   font-family: "Montserrat", sans-serif;
 }
-.componentButton .buttonDiv button {
+.buttonLeft .collapseDiv .buttonDiv button {
   margin: 0 10px 0 0;
   padding: 5px;
   border: none;
   background-color: #FF6060;
   font-size: 2em;
 }
-.componentButton .buttonDiv button :hover {
+.buttonLeft .collapseDiv .buttonDiv button :hover {
   cursor: pointer;
+}
+.buttonLeft .collapseDiv .descriptionDiv {
+  width: 95%;
+  background-color: #F6F6F6;
+  border-radius: 5px;
+}
+.buttonLeft .collapseDiv .descriptionDiv div {
+  margin: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #FF6060;
+  font-size: 1.1em;
+  height: 200px;
+}
+.buttonLeft .collapseDiv .descriptionDiv div .collapseUl {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonRight {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.buttonRight .collapseDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.buttonRight .collapseDiv .buttonDiv {
+  width: 95%;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  height: 55px;
+  background-color: #FF6060;
+  display: flex;
+  flex-direction: row;
+}
+.buttonRight .collapseDiv .buttonDiv p {
+  font-size: 1.4em;
+  color: white;
+  margin: 0 0 0 15px;
+  font-family: "Montserrat", sans-serif;
+}
+.buttonRight .collapseDiv .buttonDiv button {
+  margin: 0 10px 0 0;
+  padding: 5px;
+  border: none;
+  background-color: #FF6060;
+  font-size: 2em;
+}
+.buttonRight .collapseDiv .buttonDiv button :hover {
+  cursor: pointer;
+}
+.buttonRight .collapseDiv .descriptionDiv {
+  width: 95%;
+  background-color: #F6F6F6;
+  border-radius: 5px;
+}
+.buttonRight .collapseDiv .descriptionDiv div {
+  margin: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #FF6060;
+  font-size: 1.1em;
+  height: 200px;
 }
 
 .tags {
@@ -326,9 +391,22 @@
   align-items: center;
 }
 
+.etoilesDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  margin: 20px 0 0 0;
+}
+.etoilesDiv .etoile {
+  color: #E3E3E3;
+  font-size: 1.6em;
+}
+
 .hostDiv {
   display: flex;
   flex-direction: row;
+  margin: 10px 0 0 0;
 }
 .hostDiv img {
   height: 70px;

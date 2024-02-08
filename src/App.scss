@@ -52,21 +52,19 @@ $primary-color: #FF6060;
 
 @mixin logementComponent {
     width: 100%;
-    height: 200px;
     color: $primary-color;
-    justify-content: end;
     @include fontStyle;
     @include column;
 
     h1 {
         font-size: 2.3em;
-        margin: 0 0 0 0;
+        margin: 10px 0 0 0;
         font-weight: 100;
     }
 
     h2 {
         font-size: 1.2em;
-        margin: 0px 0 0 0;
+        margin: 10px 0 10px 0;
         font-weight: 100;
     }
 
@@ -76,6 +74,33 @@ $primary-color: #FF6060;
         @include row;
     }
     
+}
+
+@mixin logementButton {
+    width: 95%;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    @include button;
+    @include row;
+
+    p {
+        font-size: 1.4em;
+        @include buttonFont;
+        @include fontStyle;
+    }
+
+    button {
+        margin: 0 10px 0 0;
+        padding: 5px;
+        border: none;
+        background-color: $primary-color;
+        font-size: 2em;
+    
+        :hover {
+            cursor: pointer;
+        }
+    }
 }
 
 //// CSS page accueil ////
@@ -302,49 +327,83 @@ $primary-color: #FF6060;
 
 .componentRight {
     align-items: end;
-    @include logementComponent;
+    @include logementComponent;  
 }
 
-.componentRight .componentButton {
-    display: flex;
-    justify-content: end;
-    width: 95%;
-}
 
-.componentButton {
-    border: 2px solid red;
-    width: 100%;
-    align-items: end;
-}
 
-.componentButton .buttonDiv {
-    border: 2px solid green;
-    align-items: center;
-    justify-content: space-between;
-    width: 95%;
-    border-radius: 10px;
-    margin: 0px 0 0px 0;
-    @include button;
+.componentButtons {
     @include row;
+    width: 80%;
+    justify-content: space-between;
+}
 
-    p {
-        font-size: 1.6em;
-        @include buttonFont;
-        @include fontStyle;
-    }
+.buttonLeft {
+    @include row;
+    width: 50%;
 
-    button {
-        margin: 0 10px 0 0;
-        padding: 5px;
-        border: none;
-        background-color: $primary-color;
-        font-size: 2em;
-    
-        :hover {
-            cursor: pointer;
+    .collapseDiv {
+        @include column;
+        width: 100%;
+
+        .buttonDiv {
+            @include logementButton; 
+        }
+
+        .descriptionDiv {
+            width: 95%;
+            background-color: #F6F6F6;
+            border-radius: 5px;
+
+            div {
+                margin: 20px;
+                @include fontStyle;
+                color: $primary-color;
+                font-size: 1.1em;
+                height: 200px;
+
+                .collapseUl {
+                    @include column;
+                }
+
+            }
         }
     }
 }
+
+.buttonRight {
+    @include row;
+    width: 50%;
+
+    .collapseDiv {
+        width: 100%;
+        @include column;
+        align-items: end;
+    
+        .buttonDiv {
+            @include logementButton;
+            
+        }
+
+        .descriptionDiv {
+            width: 95%;
+            background-color: #F6F6F6;
+            border-radius: 5px;
+
+            div {
+                margin: 20px;
+                @include fontStyle;
+                color: $primary-color;
+                font-size: 1.1em;
+                height: 200px;
+            }
+        }
+    }
+}
+
+
+
+
 
 .tags {
     list-style-type: none;
@@ -360,8 +419,23 @@ $primary-color: #FF6060;
     align-items: center;
 }
 
+.etoilesDiv {
+    @include row;
+    justify-content: space-between;
+    width: 200px;
+    margin: 20px 0 0 0;
+
+    .etoile {
+        color: #E3E3E3;
+        font-size: 1.6em;
+    }
+
+
+}
+
 .hostDiv {
     @include row;
+    margin: 10px 0 0 0;
 
     img {
         height: 70px;
