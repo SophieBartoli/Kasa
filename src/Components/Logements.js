@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Collapse from "./Collapse.js";
 import Slideshow from "./Slideshow.js";
+import { Navigate } from "react-router-dom";
 
 const Logements = () => {
 	let { id } = useParams();
@@ -14,17 +15,7 @@ const Logements = () => {
 	const descriptions = logementData.description;
 	const equipements = logementData.equipments;
 
-	const equipementsLi = () => {
-		
-		return (
-			<>
-				{equipements.map( equipement => (
-					<li key={equipement} className="equipements">{equipement}</li>
-				))}
-			</>
-		)
-	}
-
+	const [toError, setToError] = useState(false);
 
 	useEffect(() => {
 	fetch('http://127.0.0.1:5500/logement.json')
@@ -33,14 +24,22 @@ const Logements = () => {
 		const logement = data.find(item => item.id === id);
 		if (logement) {
 		setLocationData(logement);
+		return console.log(logement.pictures);
 		} else {
-		console.log('Logement non trouvé');
+		setToError(true);
 		}
   	})
 	.catch(error => {
+		setToError(true);
 		console.error('Erreur lors de la récupération des données:', error);
 	});
 	}, [id])
+
+	if (toError) {
+		return (
+			<Navigate to="/Error" replace={true}/>
+		)
+	}
 
 	return (
 		<div className="rootDiv">
@@ -50,7 +49,6 @@ const Logements = () => {
 					<Header/>
 				</div>
 				<div className="carousel">
-					<Slideshow/>
 					<img className="imageCarousel" src={logementData.pictures[0]} alt=""/>
 					<div className="carouselButtons">
 						<button/>
@@ -90,7 +88,10 @@ const Logements = () => {
 						<Collapse collapseText={"Description"} collapseDescription={ descriptions }/>
 					</div>
 					<div className="buttonRight">
+						
 						<Collapse collapseText={"Équipements"} collapseUl={ equipements }/>
+						
+						
 					</div>
 				</div>	
 				<Footer/>

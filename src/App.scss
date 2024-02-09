@@ -118,18 +118,20 @@ $primary-color: #FF6060;
     width: 100%;
     @include margin;
     @include row;
-}
 
-.headerNav {
-    display: flex;
-    align-items: center;
-}
+    .headerNav {
+        display: flex;
+        align-items: center;
+    }
 
-.headerLink{
-    font-size: 1.5em;
-    padding: 0 0 0 50px;
-    color: $primary-color;
-    @include fontStyle;
+    .headerLink{
+        font-size: 1.5em;
+        padding: 0 0 0 50px;
+        color: $primary-color;
+        text-decoration: none;
+        @include fontStyle;
+    }
+    
 }
 
 .banniere {

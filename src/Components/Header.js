@@ -12,7 +12,7 @@ const Header = () => {
 
     const ButtonLink = ( {linkText, linkTo}) => {
         return (
-            <Link className="headerLink" to={ linkTo } style={{ textDecoration: isActive ? 'underline' : 'none',}}>{ linkText }</Link>
+            <Link className="headerLink" to={ linkTo }>{ linkText }</Link>
         )
     } 
 

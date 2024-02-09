@@ -17,9 +17,16 @@ const Collapse = ({ collapseText, collapseDescription, collapseUl}) => {
                 <button onClick={ Toggle }><FontAwesomeIcon icon={faAngleUp} color="white"/></button>
             </div>
             <div className='descriptionDiv'>
-                {open && <div> 
-                            <p className="collapseDescription"> { collapseDescription } </p> 
-                            <ul className="collapseUl"> { collapseUl } </ul>
+                {open && <div>
+                    {collapseDescription ? (
+                        <p className="collapseDescription"> { collapseDescription } </p> 
+                    ) : (
+                        <div className="collapseUl"> 
+                        <ul>{ collapseUl.map( collapseUl => (
+                            <li key={collapseUl} className="collapseUl">{collapseUl}</li>
+                        ))}</ul> 
+                        </div>
+                    ) } 
                         </div>}
             </div>
         </div>

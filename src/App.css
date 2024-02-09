@@ -17,16 +17,15 @@
   display: flex;
   flex-direction: row;
 }
-
-.headerNav {
+.headerDiv .headerNav {
   display: flex;
   align-items: center;
 }
-
-.headerLink {
+.headerDiv .headerLink {
   font-size: 1.5em;
   padding: 0 0 0 50px;
   color: #FF6060;
+  text-decoration: none;
   font-family: "Montserrat", sans-serif;
 }
 
