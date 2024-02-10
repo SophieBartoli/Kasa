@@ -130,6 +130,10 @@ $primary-color: #FF6060;
         color: $primary-color;
         text-decoration: none;
         @include fontStyle;
+
+        :active {
+            text-decoration: underline;
+        }
     }
     
 }
@@ -285,10 +289,6 @@ $primary-color: #FF6060;
     align-items: center;
     @include column;
 
-    button {
-        height: 50px;
-    }
-
     p {
         position: absolute;
         z-index: 3;
@@ -300,7 +300,7 @@ $primary-color: #FF6060;
 }
 
 .imageCarousel {
-    height: 400px;
+    height: 450px;
     width: 100%;
     object-fit: cover;
     position: relative;
@@ -311,9 +311,19 @@ $primary-color: #FF6060;
 .carouselButtons {
     display: flex;
     position: absolute;
-    width: 75%;
+    width: 77%;
+    height: 100px;
     z-index: 2;
     justify-content: space-between;
+
+    button {
+        border: none;
+        background-color: transparent;
+
+        :hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .pageLogementBody {
@@ -363,14 +373,23 @@ $primary-color: #FF6060;
                 color: $primary-color;
                 font-size: 1.1em;
                 height: 200px;
-
-                .collapseUl {
-                    @include column;
-                }
-
             }
         }
     }
+}
+
+.collapseUlDiv {
+
+    ul {
+        padding-inline-start: 0;
+        padding: 0;
+        margin-block-start: 0em;
+    }
+}
+
+.collapseUl {
+    list-style-type: none;
+    margin: 0 0 10px 0;
 }
 
 .buttonRight {
@@ -484,6 +503,22 @@ $primary-color: #FF6060;
         color: $primary-color;
     }
 }
+
+
+//// Animations ///
+
+/*.buttonDiv {
+
+    button {
+        
+        :active {
+
+        }
+    }
+}
+*/
+
+
 
 
 

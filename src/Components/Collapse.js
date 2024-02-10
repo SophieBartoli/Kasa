@@ -21,7 +21,7 @@ const Collapse = ({ collapseText, collapseDescription, collapseUl}) => {
                     {collapseDescription ? (
                         <p className="collapseDescription"> { collapseDescription } </p> 
                     ) : (
-                        <div className="collapseUl"> 
+                        <div className="collapseUlDiv"> 
                         <ul>{ collapseUl.map( collapseUl => (
                             <li key={collapseUl} className="collapseUl">{collapseUl}</li>
                         ))}</ul> 

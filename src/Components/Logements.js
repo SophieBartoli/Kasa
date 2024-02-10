@@ -14,6 +14,7 @@ const Logements = () => {
 	const tags = logementData.tags;
 	const descriptions = logementData.description;
 	const equipements = logementData.equipments;
+	const pictures = logementData.pictures;
 
 	const [toError, setToError] = useState(false);
 
@@ -41,6 +42,7 @@ const Logements = () => {
 		)
 	}
 
+
 	return (
 		<div className="rootDiv">
 			{ logementData.length !== 0 ?
@@ -48,14 +50,7 @@ const Logements = () => {
 				<div className="pageDiv">
 					<Header/>
 				</div>
-				<div className="carousel">
-					<img className="imageCarousel" src={logementData.pictures[0]} alt=""/>
-					<div className="carouselButtons">
-						<button/>
-						<button/>
-					</div>
-					<p>1/4</p>
-				</div>
+				<Slideshow imageSource= { pictures[0] }/>
 
 
 				<div className="pageLogementBody">
