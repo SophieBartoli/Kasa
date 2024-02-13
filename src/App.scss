@@ -105,8 +105,10 @@ $primary-color: #FF6060;
 
 //// CSS page accueil ////
 
+
 .rootDiv {
     @include baseStyle;
+    
 }
 
 .pageDiv {
@@ -122,21 +124,26 @@ $primary-color: #FF6060;
     .headerNav {
         display: flex;
         align-items: center;
-    }
-
-    .headerLink{
-        font-size: 1.5em;
-        padding: 0 0 0 50px;
-        color: $primary-color;
-        text-decoration: none;
-        @include fontStyle;
-
-        :active {
-            text-decoration: underline;
-        }
-    }
-    
+    }    
 }
+
+.headerLink {
+    font-size: 1.5em;
+    padding: 0 0 0 50px;
+    color: $primary-color;
+    text-decoration: none;
+    @include fontStyle;
+}
+
+.headerLink:active {
+    text-decoration: underline;
+}
+
+.headerLink:visited {
+    text-decoration: underline;
+}
+
+
 
 .banniere {
     align-items: center;
@@ -145,12 +152,23 @@ $primary-color: #FF6060;
     @include margin;
     @include column;
 
+    @media only screen and (max-width: 768px) {
+        margin: 0 0 20px 0;
+     }
+
     h1 {
         position: absolute;
         z-index: 2;
         font-size: 3em;
         color: white;
         font-weight: 200;
+
+        @media only screen and (max-width: 768px) {
+            width: 360px;
+            flex-wrap: wrap;
+            margin: 0 110px 0 0;
+            font-size: 2.5em;
+        }
     }
 
     img {
@@ -159,6 +177,11 @@ $primary-color: #FF6060;
         height: 220px;
         width: 100%;
         @include banniere;
+
+        @media only screen and (max-width: 768px) {
+            height: 170px;
+            border-radius: 20px;
+        }
     }
 }
 
@@ -170,11 +193,15 @@ $primary-color: #FF6060;
     width: 100%;
     height: 100%;
     padding: 45px 0 0 0;
+
+    @media only screen and (max-width: 768px) {
+        align-items: center;
+        background-color: transparent;
+    }
 }
 
 .logementDiv {
     margin: 0 0 45px 0;
-    @include images;
     @include column;
 
     img {
@@ -184,6 +211,11 @@ $primary-color: #FF6060;
         border-radius: 30px;
         filter: brightness(70%);
         @include images;
+
+        @media only screen and (max-width: 768px) {
+            width: 600px;
+            height: 600px;
+         }
     }
 }
 
@@ -208,6 +240,11 @@ $primary-color: #FF6060;
     width: 90%;
     height: 95%;
     @include row;
+
+    @media only screen and (max-width: 768px) {
+        justify-content: center;
+        background-color: transparent;
+    }
 }
 
 .footerDiv {
@@ -219,6 +256,7 @@ $primary-color: #FF6060;
     align-items: center;
     justify-content: center;
     @include column;
+
 
     img {
         width: 150px;
@@ -235,7 +273,7 @@ $primary-color: #FF6060;
 
 
 //// CSS page a propos ////
-
+ 
 .bodyDiv .buttonDiv {
     align-items: center;
     justify-content: space-between;
@@ -243,6 +281,10 @@ $primary-color: #FF6060;
     border-radius: 5px;
     @include button;
     @include row;
+
+    @media only screen and (max-width: 768px) {
+        width: 600px;
+    }
 
     p {
         font-size: 1.6em;
@@ -266,6 +308,10 @@ $primary-color: #FF6060;
 .bodyDiv .descriptionDiv {
     margin: 0 0 30px 0;
     width: 1000px;
+
+    @media only screen and (max-width: 768px) {
+        width: 600px;
+    }
 }
 
 .bodyDiv .collapseDescription {

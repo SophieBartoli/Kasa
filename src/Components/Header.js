@@ -21,8 +21,8 @@ const Header = () => {
         <div className='headerDiv'>
             <img src={ logo } alt=""/>
             <nav className='headerNav'>
-                <ButtonLink onClick={ ToggleActive } linkTo={"/"} linkText={"Accueil"}></ButtonLink>
-                <ButtonLink onClick={ ToggleActive } linkTo={"/Apropos"} linkText={"A propos"}></ButtonLink>
+                <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/"} linkText={"Accueil"}></ButtonLink>
+                <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/Apropos"} linkText={"A propos"}></ButtonLink>
             </nav>
         </div>
 
