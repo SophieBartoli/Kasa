@@ -50,7 +50,7 @@ const Logements = () => {
 				<div className="pageDiv">
 					<Header/>
 				</div>
-				<Slideshow imageSource= { pictures[0] }/>
+				<Slideshow imageSourceArray= { pictures }/>
 
 
 				<div className="pageLogementBody">

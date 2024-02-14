@@ -105,14 +105,16 @@ $primary-color: #FF6060;
 
 //// CSS page accueil ////
 
-
 .rootDiv {
     @include baseStyle;
-    
 }
 
 .pageDiv {
     width: 80%;
+
+    @media only screen and (max-width: 480px) {
+       width: 85%;
+    }
 }
 
 .headerDiv {
@@ -120,10 +122,39 @@ $primary-color: #FF6060;
     width: 100%;
     @include margin;
     @include row;
+    border: 2px solid red;
+
+    @media only screen and (max-width: 768px) {
+        margin: 0 0 20px 0;
+    }
+
+    @media only screen and (max-width: 480px) {
+        margin: 0 0 20px 0;
+    }
+
+
+    img { 
+        @media only screen and (max-width: 768px) {
+            width: 300px;
+            height: auto;
+        }
+
+        @media only screen and (max-width: 480px) {
+            width: 50%;
+            height: auto;
+        }
+    }
+
 
     .headerNav {
         display: flex;
         align-items: center;
+        width: 100%;
+
+        @media only screen and (max-width: 480px) {
+            justify-content: end;
+        }
+       
     }    
 }
 
@@ -133,14 +164,12 @@ $primary-color: #FF6060;
     color: $primary-color;
     text-decoration: none;
     @include fontStyle;
-}
+    
+    @media only screen and (max-width: 480px) {
+        padding: 0 0 0 10px;
+       font-size: 80%;
+    }
 
-.headerLink:active {
-    text-decoration: underline;
-}
-
-.headerLink:visited {
-    text-decoration: underline;
 }
 
 
@@ -153,8 +182,13 @@ $primary-color: #FF6060;
     @include column;
 
     @media only screen and (max-width: 768px) {
-        margin: 0 0 20px 0;
-     }
+        margin: 0 0 0 0;
+    }
+
+     @media only screen and (max-width: 480px) {
+        margin: 0 0 0 0;
+    }
+
 
     h1 {
         position: absolute;
@@ -169,6 +203,13 @@ $primary-color: #FF6060;
             margin: 0 110px 0 0;
             font-size: 2.5em;
         }
+
+        @media only screen and (max-width: 480px) {
+            width: 190px;
+            flex-wrap: wrap;
+            margin: 0 80px 0 0;
+            font-size: 1.3em;
+        }
     }
 
     img {
@@ -182,6 +223,13 @@ $primary-color: #FF6060;
             height: 170px;
             border-radius: 20px;
         }
+
+        @media only screen and (max-width: 480px) {
+            height: 130px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
     }
 }
 
@@ -197,12 +245,26 @@ $primary-color: #FF6060;
     @media only screen and (max-width: 768px) {
         align-items: center;
         background-color: transparent;
+        padding: 30px 0 0 0;
     }
+
+    @media only screen and (max-width: 480px) {
+        border: 2px solid blue;
+     }
+ 
 }
 
 .logementDiv {
     margin: 0 0 45px 0;
     @include column;
+
+    @media only screen and (max-width: 480px) {
+       margin: 0 0 30px 0;
+       border: 2px solid red;
+       margin: 0 0 20px 0;
+       width: 100%;
+    }
+
 
     img {
         position: relative;
@@ -215,7 +277,12 @@ $primary-color: #FF6060;
         @media only screen and (max-width: 768px) {
             width: 600px;
             height: 600px;
-         }
+        }
+
+        @media only screen and (max-width: 480px) {
+            height: 100%;
+            width: 100%;
+        }
     }
 }
 
@@ -230,6 +297,17 @@ $primary-color: #FF6060;
     margin: 230px 0 0 10px;
     @include fontStyle;
     @include column;
+
+    @media only screen and (max-width: 768px) {
+        margin: 500px 0 0 10px;
+        width: 300px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        margin: 250px 0 0 10px;
+        width: 300px;
+        font-size: 15px;
+    }
 }
 
 .imagesDiv {
@@ -245,6 +323,11 @@ $primary-color: #FF6060;
         justify-content: center;
         background-color: transparent;
     }
+
+    @media only screen and (max-width: 480px) {
+        width: 100%;
+        height: 100%;
+     }
 }
 
 .footerDiv {
@@ -256,6 +339,14 @@ $primary-color: #FF6060;
     align-items: center;
     justify-content: center;
     @include column;
+
+    @media only screen and (max-width: 768px) {
+        margin: 20px 0 0 0;
+    }
+
+     @media only screen and (max-width: 480px) {
+        margin: 20px 0 0 0;
+    }
 
 
     img {
@@ -366,6 +457,11 @@ $primary-color: #FF6060;
         border: none;
         background-color: transparent;
 
+        @media only screen and (max-width: 768px) {
+            font-size: 0.5em;
+    
+        }
+
         :hover {
             cursor: pointer;
         }
@@ -377,28 +473,52 @@ $primary-color: #FF6060;
     width: 80%;
     justify-content: space-between;
     @include row;
+
+    @media only screen and (max-width: 768px) {
+        @include column;
+        align-items: center;
+    }
 }
 
 .componentLeft {
-  @include logementComponent;
+    @include logementComponent;
 }
+
 
 .componentRight {
     align-items: end;
     @include logementComponent;  
-}
 
+    
+    @media only screen and (max-width: 768px) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+}
 
 
 .componentButtons {
     @include row;
     width: 80%;
     justify-content: space-between;
+
+    
+    @media only screen and (max-width: 768px) {
+        @include column;
+    }
 }
 
 .buttonLeft {
     @include row;
     width: 50%;
+
+    
+    @media only screen and (max-width: 768px) {
+       width: 100%;
+       margin: 10px 0 10px 0;
+    }
 
     .collapseDiv {
         @include column;
@@ -406,6 +526,10 @@ $primary-color: #FF6060;
 
         .buttonDiv {
             @include logementButton; 
+
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+             }
         }
 
         .descriptionDiv {
@@ -442,13 +566,27 @@ $primary-color: #FF6060;
     @include row;
     width: 50%;
 
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        margin: 10px 0 10px 0;
+     }
+ 
+
     .collapseDiv {
         width: 100%;
         @include column;
         align-items: end;
+
+        @media only screen and (max-width: 768px) {
+            align-items: start;
+         }
     
         .buttonDiv {
             @include logementButton;
+
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+             }
             
         }
 

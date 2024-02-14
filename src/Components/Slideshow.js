@@ -3,31 +3,37 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
-const Slideshow = ({ imageSource  }) => {
+const Slideshow = ({ imageSourceArray  }) => {
 
-    const [imageSlide, setImageSlide] = useState(0);
-    const length = imageSource.length;
+    const [imageSlideIndex, setImageSlideIndex] = useState(0);
+    const length = imageSourceArray.length; 
+    var imageSource = imageSourceArray[imageSlideIndex];
+    
 
-    const prevSlide = () => {
-        setImageSlide(imageSlide === 0 ? length - 1 : imageSlide - 1);
+    const NextSlide = () => {
+        setImageSlideIndex(imageSlideIndex >= length - 1  ? 0 : imageSlideIndex + 1);
       };
 
-    const nextSlide = () => {
-        setImageSlide(imageSlide === length - 1 ? 0 : imageSlide + 1);
-      };
+    const PreviousSlide = () => {
+        setImageSlideIndex(imageSlideIndex === 0 ? length - 1 : imageSlideIndex - 1);
+    };
+
 
     return (
         <div className="carousel">
-            <img className="imageCarousel" src={ imageSource } alt=""/>
 
-            { imageSource.length !== 0 &&
+            { imageSourceArray.length >=1 &&
+            <img className="imageCarousel" src={ imageSource } alt=""/>
+            }
+
+            { imageSourceArray.length > 1 &&
                 <div className="carouselButtons">
-                    <button onClick={ "" }> <FontAwesomeIcon icon={faAngleLeft} color="white" size="7x"/> </button>
-                    <button onClick={ "" }> <FontAwesomeIcon icon={faAngleRight} color="white" size="7x"/> </button>
+                    <button onClick={ PreviousSlide }> <FontAwesomeIcon icon={faAngleLeft} color="white" size="7x"/> </button>
+                    <button onClick={ NextSlide }> <FontAwesomeIcon icon={faAngleRight} color="white" size="7x"/> </button>
                 </div>
             }
 
-            <p>1/4</p>
+            <p>{imageSlideIndex + 1}/{length}</p>
         </div>
     )
 };

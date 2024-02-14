@@ -9,6 +9,7 @@ const Accueil = () => {
 
     const [logementData, setLocationData] = useState([]);
 
+
     useEffect(() => {
         fetch("http://127.0.0.1:5500/logement.json").then((response) => {
             response.json().then((data) => {

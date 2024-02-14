@@ -7,7 +7,7 @@ const Header = () => {
     const [isActive, setIsActive] = useState(false);
 
     function ToggleActive() {
-        return setIsActive(!isActive);
+        return setIsActive(!isActive); 
     }
 
     const ButtonLink = ( {linkText, linkTo}) => {
@@ -20,10 +20,21 @@ const Header = () => {
     return (
         <div className='headerDiv'>
             <img src={ logo } alt=""/>
+
             <nav className='headerNav'>
-                <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/"} linkText={"Accueil"}></ButtonLink>
-                <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/Apropos"} linkText={"A propos"}></ButtonLink>
+                <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/"} linkText={"Accueil"} style={ {textDecoration: 'underline',}}></ButtonLink>
+                <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/Apropos"} linkText={"A propos"} style={ {textDecoration: 'underline',}}></ButtonLink>
             </nav>
+
+            {/*
+            { !isActive &&
+                <nav className='headerNav'>
+                    <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/"} linkText={"Accueil"} style={ {textDecoration: 'none',}}></ButtonLink>
+                    <ButtonLink className="headerLink" onClick={ ToggleActive } linkTo={"/Apropos"} linkText={"A propos"} style={ {textDecoration: 'none',}}></ButtonLink>
+                </nav>
+            }
+        */}
+
         </div>
 
     );
