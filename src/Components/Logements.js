@@ -15,6 +15,7 @@ const Logements = () => {
 	const descriptions = logementData.description;
 	const equipements = logementData.equipments;
 	const pictures = logementData.pictures;
+	const ratings = logementData.rating;
 
 	const [toError, setToError] = useState(false);
 
@@ -47,9 +48,6 @@ const Logements = () => {
 		<div className="rootDiv">
 			{ logementData.length !== 0 ?
 			<>
-				<div className="pageDiv">
-					<Header/>
-				</div>
 				<Slideshow imageSourceArray= { pictures }/>
 
 
@@ -70,11 +68,11 @@ const Logements = () => {
 								<img src={logementData.host.picture} alt=""/>
 							</div>
 							<div className="etoilesDiv">
-								<FontAwesomeIcon icon={faStar} className="etoile"/>
-								<FontAwesomeIcon icon={faStar} className="etoile"/>
-								<FontAwesomeIcon icon={faStar} className="etoile"/>
-								<FontAwesomeIcon icon={faStar} className="etoile"/>
-								<FontAwesomeIcon icon={faStar} className="etoile"/>	
+								<FontAwesomeIcon icon={faStar} className="etoile" style= {ratings >= "1" ? {color: " #FF6060"} : {color: "#E3E3E3"} }/>
+								<FontAwesomeIcon icon={faStar} className="etoile" style= {ratings >= "2" ? {color: " #FF6060"} : {color: "#E3E3E3"} }/>
+								<FontAwesomeIcon icon={faStar} className="etoile" style= {ratings >= "3" ? {color: " #FF6060"} : {color: "#E3E3E3"} }/>
+								<FontAwesomeIcon icon={faStar} className="etoile" style= {ratings >= "4" ? {color: " #FF6060"} : {color: "#E3E3E3"} }/>
+								<FontAwesomeIcon icon={faStar} className="etoile" style= {ratings === "5" ? {color: " #FF6060"} : {color: "#E3E3E3"} }/>	
 							</div>
 					</div>
 				</div>
@@ -89,7 +87,6 @@ const Logements = () => {
 						
 					</div>
 				</div>	
-				<Footer/>
 			</>
 			: null
 			}

@@ -56,6 +56,10 @@
   }
 }
 
+.active {
+  border-bottom: 2px solid #FF6060;
+}
+
 .headerLink {
   font-size: 1.5em;
   padding: 0 0 0 50px;
@@ -617,7 +621,6 @@
   margin: 20px 0 0 0;
 }
 .etoilesDiv .etoile {
-  color: #E3E3E3;
   font-size: 1.6em;
 }
 

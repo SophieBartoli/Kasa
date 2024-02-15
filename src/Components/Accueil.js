@@ -21,7 +21,6 @@ const Accueil = () => {
     return (
         <div className="rootDiv">
             <div className="pageDiv">
-                <Header/>
                 <Banner
                     imgSrc={ImgAccueil} 
                     imgText={"Chez vous, partout et ailleurs"}/>
@@ -34,7 +33,6 @@ const Accueil = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 };

@@ -154,8 +154,12 @@ $primary-color: #FF6060;
         @media only screen and (max-width: 480px) {
             justify-content: end;
         }
-       
+
     }    
+}
+
+.active {
+    border-bottom: 2px solid $primary-color;
 }
 
 .headerLink {
@@ -171,6 +175,7 @@ $primary-color: #FF6060;
     }
 
 }
+
 
 
 
@@ -403,6 +408,8 @@ $primary-color: #FF6060;
     @media only screen and (max-width: 768px) {
         width: 600px;
     }
+
+
 }
 
 .bodyDiv .collapseDescription {
@@ -631,7 +638,6 @@ $primary-color: #FF6060;
     margin: 20px 0 0 0;
 
     .etoile {
-        color: #E3E3E3;
         font-size: 1.6em;
     }
 
