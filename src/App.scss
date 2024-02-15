@@ -318,7 +318,7 @@ $primary-color: #FF6060;
         }
 
         @media only screen and (max-width: 480px) {
-            height: 100%;
+            height: 250px;
             width: 100%;
         }
     }
@@ -341,13 +341,13 @@ $primary-color: #FF6060;
     }
 
     @media only screen and (max-width: 480px) {
-        margin: 150px 0 0 10px;
+        margin: 230px 0 0 10px;
         width: 300px;
         font-size: 15px;
     }
 
     @media only screen and (max-width: 320px) {
-        margin: 100px 0 0 10px;
+        margin: 170px 0 0 10px;
         width: 200px;
         font-size: 12px;
     }
