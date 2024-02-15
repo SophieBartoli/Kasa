@@ -1,13 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
-.rootDiv {
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.rootDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .pageDiv {
   width: 80%;
+  align-items: center;
 }
 @media only screen and (max-width: 480px) {
   .pageDiv {
@@ -17,11 +25,10 @@
 
 .headerDiv {
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
   margin: 0 0 40px 0;
   display: flex;
   flex-direction: row;
-  border: 2px solid red;
 }
 @media only screen and (max-width: 768px) {
   .headerDiv {
@@ -35,24 +42,24 @@
 }
 @media only screen and (max-width: 768px) {
   .headerDiv img {
-    width: 300px;
+    width: 250px;
     height: auto;
   }
 }
 @media only screen and (max-width: 480px) {
   .headerDiv img {
-    width: 50%;
+    width: 40%;
     height: auto;
   }
 }
 .headerDiv .headerNav {
   display: flex;
+  justify-content: end;
   align-items: center;
-  width: 100%;
 }
 @media only screen and (max-width: 480px) {
   .headerDiv .headerNav {
-    justify-content: end;
+    width: 50%;
   }
 }
 
@@ -62,15 +69,26 @@
 
 .headerLink {
   font-size: 1.5em;
-  padding: 0 0 0 50px;
+  margin: 0 0 0 80px;
   color: #FF6060;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
 }
+@media only screen and (max-width: 768px) {
+  .headerLink {
+    font-size: 1.2em;
+  }
+}
 @media only screen and (max-width: 480px) {
   .headerLink {
-    padding: 0 0 0 10px;
-    font-size: 80%;
+    font-size: 0.9em;
+    margin: 0 0 0 20px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .headerLink {
+    font-size: 0.8em;
+    margin: 0 0 0 10px;
   }
 }
 
@@ -115,6 +133,12 @@
     font-size: 1.3em;
   }
 }
+@media only screen and (max-width: 320px) {
+  .banniere h1 {
+    font-size: 1em;
+    margin: 0 40px 0 0;
+  }
+}
 .banniere img {
   position: relative;
   z-index: 1;
@@ -154,11 +178,6 @@
     padding: 30px 0 0 0;
   }
 }
-@media only screen and (max-width: 480px) {
-  .logement {
-    border: 2px solid blue;
-  }
-}
 
 .logementDiv {
   margin: 0 0 45px 0;
@@ -168,7 +187,6 @@
 @media only screen and (max-width: 480px) {
   .logementDiv {
     margin: 0 0 30px 0;
-    border: 2px solid red;
     margin: 0 0 20px 0;
     width: 100%;
   }
@@ -201,7 +219,6 @@
   width: 200px;
   font-size: 16px;
   color: white;
-  font-weight: 100;
   text-decoration: none;
   margin: 230px 0 0 10px;
   font-family: "Montserrat", sans-serif;
@@ -216,10 +233,20 @@
 }
 @media only screen and (max-width: 480px) {
   .locationTitle {
-    margin: 250px 0 0 10px;
+    margin: 150px 0 0 10px;
     width: 300px;
     font-size: 15px;
   }
+}
+@media only screen and (max-width: 320px) {
+  .locationTitle {
+    margin: 100px 0 0 10px;
+    width: 200px;
+    font-size: 12px;
+  }
+}
+.locationTitle h3 {
+  font-weight: 400;
 }
 
 .imagesDiv {
@@ -276,11 +303,39 @@
   margin: 30px 0 0 0;
   font-family: "Montserrat", sans-serif;
 }
+@media only screen and (max-width: 480px) {
+  .footerDiv p {
+    font-size: 1.2em;
+    width: 40%;
+    text-align: center;
+  }
+}
+
+.bodyDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .bodyDiv {
+    margin: 30px 0 0 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .bodyDiv {
+    justify-content: center;
+  }
+}
+.bodyDiv .collapseDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .bodyDiv .buttonDiv {
   align-items: center;
   justify-content: space-between;
-  width: 1000px;
+  width: 80%;
   border-radius: 5px;
   height: 55px;
   background-color: #FF6060;
@@ -289,7 +344,13 @@
 }
 @media only screen and (max-width: 768px) {
   .bodyDiv .buttonDiv {
-    width: 600px;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .bodyDiv .buttonDiv {
+    width: 100%;
+    height: 40px;
   }
 }
 .bodyDiv .buttonDiv p {
@@ -297,6 +358,16 @@
   color: white;
   margin: 0 0 0 15px;
   font-family: "Montserrat", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  .bodyDiv .buttonDiv p {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .bodyDiv .buttonDiv p {
+    font-size: 1.2em;
+  }
 }
 .bodyDiv .buttonDiv button {
   margin: 0 10px 0 0;
@@ -308,14 +379,25 @@
 .bodyDiv .buttonDiv button :hover {
   cursor: pointer;
 }
+@media only screen and (max-width: 768px) {
+  .bodyDiv .buttonDiv button {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .bodyDiv .buttonDiv button {
+    font-size: 1.5em;
+  }
+}
 
 .bodyDiv .descriptionDiv {
   margin: 0 0 30px 0;
-  width: 1000px;
+  width: 80%;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
   .bodyDiv .descriptionDiv {
-    width: 600px;
+    width: 100%;
+    margin: 0 0 15px 0;
   }
 }
 
@@ -329,6 +411,11 @@
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
+}
+@media only screen and (max-width: 480px) {
+  .bodyDiv .collapseDescription {
+    font-size: 0.9em;
+  }
 }
 
 .carousel {
@@ -347,6 +434,12 @@
   color: white;
   font-size: 1.1em;
 }
+@media only screen and (max-width: 480px) {
+  .carousel p {
+    margin: 200px 0 0 0;
+    font-size: 0.9em;
+  }
+}
 
 .imageCarousel {
   height: 450px;
@@ -355,6 +448,12 @@
   position: relative;
   z-index: 1;
   border-radius: 30px;
+}
+@media only screen and (max-width: 480px) {
+  .imageCarousel {
+    height: 300px;
+    border-radius: 15px;
+  }
 }
 
 .carouselButtons {
@@ -372,6 +471,11 @@
 @media only screen and (max-width: 768px) {
   .carouselButtons button {
     font-size: 0.5em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .carouselButtons button {
+    font-size: 0.3em;
   }
 }
 .carouselButtons button :hover {
@@ -405,16 +509,28 @@
   margin: 10px 0 0 0;
   font-weight: 100;
 }
+@media only screen and (max-width: 480px) {
+  .componentLeft h1 {
+    font-size: 1.9em;
+  }
+}
 .componentLeft h2 {
   font-size: 1.2em;
   margin: 10px 0 10px 0;
   font-weight: 100;
+}
+@media only screen and (max-width: 480px) {
+  .componentLeft h2 {
+    font-size: 1em;
+    margin: 10px 0 0 0;
+  }
 }
 .componentLeft ul {
   list-style-type: none;
   padding-inline-start: 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .componentRight {
@@ -430,16 +546,28 @@
   margin: 10px 0 0 0;
   font-weight: 100;
 }
+@media only screen and (max-width: 480px) {
+  .componentRight h1 {
+    font-size: 1.9em;
+  }
+}
 .componentRight h2 {
   font-size: 1.2em;
   margin: 10px 0 10px 0;
   font-weight: 100;
+}
+@media only screen and (max-width: 480px) {
+  .componentRight h2 {
+    font-size: 1em;
+    margin: 10px 0 0 0;
+  }
 }
 .componentRight ul {
   list-style-type: none;
   padding-inline-start: 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 @media only screen and (max-width: 768px) {
   .componentRight {
@@ -494,12 +622,22 @@
   margin: 0 0 0 15px;
   font-family: "Montserrat", sans-serif;
 }
+@media only screen and (max-width: 480px) {
+  .buttonLeft .collapseDiv .buttonDiv p {
+    font-size: 1em;
+  }
+}
 .buttonLeft .collapseDiv .buttonDiv button {
   margin: 0 10px 0 0;
   padding: 5px;
   border: none;
   background-color: #FF6060;
   font-size: 2em;
+}
+@media only screen and (max-width: 480px) {
+  .buttonLeft .collapseDiv .buttonDiv button {
+    font-size: 1em;
+  }
 }
 .buttonLeft .collapseDiv .buttonDiv button :hover {
   cursor: pointer;
@@ -509,10 +647,20 @@
     width: 100%;
   }
 }
+@media only screen and (max-width: 480px) {
+  .buttonLeft .collapseDiv .buttonDiv {
+    height: 40px;
+  }
+}
 .buttonLeft .collapseDiv .descriptionDiv {
   width: 95%;
   background-color: #F6F6F6;
   border-radius: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .buttonLeft .collapseDiv .descriptionDiv {
+    width: 100%;
+  }
 }
 .buttonLeft .collapseDiv .descriptionDiv div {
   margin: 20px;
@@ -520,6 +668,12 @@
   color: #FF6060;
   font-size: 1.1em;
   height: 200px;
+}
+@media only screen and (max-width: 480px) {
+  .buttonLeft .collapseDiv .descriptionDiv div {
+    font-size: 0.9em;
+    height: 150px;
+  }
 }
 
 .collapseUlDiv ul {
@@ -571,12 +725,22 @@
   margin: 0 0 0 15px;
   font-family: "Montserrat", sans-serif;
 }
+@media only screen and (max-width: 480px) {
+  .buttonRight .collapseDiv .buttonDiv p {
+    font-size: 1em;
+  }
+}
 .buttonRight .collapseDiv .buttonDiv button {
   margin: 0 10px 0 0;
   padding: 5px;
   border: none;
   background-color: #FF6060;
   font-size: 2em;
+}
+@media only screen and (max-width: 480px) {
+  .buttonRight .collapseDiv .buttonDiv button {
+    font-size: 1em;
+  }
 }
 .buttonRight .collapseDiv .buttonDiv button :hover {
   cursor: pointer;
@@ -586,10 +750,20 @@
     width: 100%;
   }
 }
+@media only screen and (max-width: 480px) {
+  .buttonRight .collapseDiv .buttonDiv {
+    height: 40px;
+  }
+}
 .buttonRight .collapseDiv .descriptionDiv {
   width: 95%;
   background-color: #F6F6F6;
   border-radius: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .buttonRight .collapseDiv .descriptionDiv {
+    width: 100%;
+  }
 }
 .buttonRight .collapseDiv .descriptionDiv div {
   margin: 20px;
@@ -597,6 +771,12 @@
   color: #FF6060;
   font-size: 1.1em;
   height: 200px;
+}
+@media only screen and (max-width: 480px) {
+  .buttonRight .collapseDiv .descriptionDiv div {
+    font-size: 0.9em;
+    height: 150px;
+  }
 }
 
 .tags {
@@ -611,6 +791,17 @@
   height: 30px;
   display: flex;
   align-items: center;
+  width: 10%;
+  justify-content: center;
+}
+@media only screen and (max-width: 480px) {
+  .tags {
+    width: 20%;
+    font-size: 0.7em;
+    padding: 0 15px 0 15px;
+    margin: 10px 10px 0 0;
+    border-radius: 10px;
+  }
 }
 
 .etoilesDiv {
@@ -620,24 +811,52 @@
   width: 200px;
   margin: 20px 0 0 0;
 }
+@media only screen and (max-width: 480px) {
+  .etoilesDiv {
+    width: 30%;
+    margin: 0;
+  }
+}
 .etoilesDiv .etoile {
   font-size: 1.6em;
+}
+@media only screen and (max-width: 480px) {
+  .etoilesDiv .etoile {
+    font-size: 1em;
+  }
 }
 
 .hostDiv {
   display: flex;
   flex-direction: row;
   margin: 10px 0 0 0;
+  align-items: center;
+}
+@media only screen and (max-width: 480px) {
+  .hostDiv {
+    margin: 0;
+  }
 }
 .hostDiv img {
   height: 70px;
   border-radius: 100%;
   margin: 0 0 0 10px;
 }
+@media only screen and (max-width: 480px) {
+  .hostDiv img {
+    height: 50px;
+  }
+}
 .hostDiv p {
   text-align: end;
   width: 100px;
   font-size: 1.1em;
+}
+@media only screen and (max-width: 480px) {
+  .hostDiv p {
+    font-size: 0.9em;
+    width: 60px;
+  }
 }
 
 .errorBody {
@@ -651,8 +870,30 @@
   font-size: 14em;
   margin: 10px 0 50px 0;
 }
+@media only screen and (max-width: 768px) {
+  .errorBody h1 {
+    font-size: 10em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .errorBody h1 {
+    font-size: 6em;
+  }
+}
 .errorBody h2 {
   font-weight: normal;
+}
+@media only screen and (max-width: 768px) {
+  .errorBody h2 {
+    width: 60%;
+    text-align: center;
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .errorBody h2 {
+    font-size: 1em;
+  }
 }
 
 .errorNav {
@@ -662,19 +903,13 @@
 .errorLink {
   color: #FF6060;
 }
+@media only screen and (max-width: 480px) {
+  .errorLink {
+    font-size: 0.8em;
+  }
+}
 .errorLink :visited {
   color: #FF6060;
 }
-
-/*.buttonDiv {
-
-    button {
-
-        :active {
-
-        }
-    }
-}
-*/
 
 /*# sourceMappingURL=App.css.map */

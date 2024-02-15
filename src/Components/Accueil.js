@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "./Header";
 import Cards from "./Cards";
-import Footer from "./Footer";
 import ImgAccueil from '../Assets/Images/ImgAccueil.webp';
 import Banner from "./Banner";
 

@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
-import Header from "./Header.js"
 import { useEffect, useState } from "react";
-import Footer from "./Footer.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Collapse from "./Collapse.js";
@@ -26,7 +24,6 @@ const Logements = () => {
 		const logement = data.find(item => item.id === id);
 		if (logement) {
 		setLocationData(logement);
-		return console.log(logement.pictures);
 		} else {
 		setToError(true);
 		}
@@ -81,10 +78,7 @@ const Logements = () => {
 						<Collapse collapseText={"Description"} collapseDescription={ descriptions }/>
 					</div>
 					<div className="buttonRight">
-						
 						<Collapse collapseText={"Équipements"} collapseUl={ equipements }/>
-						
-						
 					</div>
 				</div>	
 			</>

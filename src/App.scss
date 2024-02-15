@@ -60,18 +60,28 @@ $primary-color: #FF6060;
         font-size: 2.3em;
         margin: 10px 0 0 0;
         font-weight: 100;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 1.9em;
+         }
     }
 
     h2 {
         font-size: 1.2em;
         margin: 10px 0 10px 0;
         font-weight: 100;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 1em;
+            margin: 10px 0 0 0;
+         }
     }
 
     ul {
         list-style-type: none;
         padding-inline-start: 0;
         @include row;
+        flex-wrap: wrap;
     }
     
 }
@@ -88,6 +98,10 @@ $primary-color: #FF6060;
         font-size: 1.4em;
         @include buttonFont;
         @include fontStyle;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 1em;
+        }
     }
 
     button {
@@ -96,6 +110,10 @@ $primary-color: #FF6060;
         border: none;
         background-color: $primary-color;
         font-size: 2em;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 1em;
+        }
     
         :hover {
             cursor: pointer;
@@ -105,12 +123,19 @@ $primary-color: #FF6060;
 
 //// CSS page accueil ////
 
+#root {
+    @include column;
+    align-items: center;
+}
+
 .rootDiv {
     @include baseStyle;
+    width: 100%;
 }
 
 .pageDiv {
     width: 80%;
+    align-items: center;
 
     @media only screen and (max-width: 480px) {
        width: 85%;
@@ -119,10 +144,9 @@ $primary-color: #FF6060;
 
 .headerDiv {
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
     @include margin;
     @include row;
-    border: 2px solid red;
 
     @media only screen and (max-width: 768px) {
         margin: 0 0 20px 0;
@@ -135,12 +159,12 @@ $primary-color: #FF6060;
 
     img { 
         @media only screen and (max-width: 768px) {
-            width: 300px;
+            width: 250px;
             height: auto;
         }
 
         @media only screen and (max-width: 480px) {
-            width: 50%;
+            width: 40%;
             height: auto;
         }
     }
@@ -148,11 +172,11 @@ $primary-color: #FF6060;
 
     .headerNav {
         display: flex;
+        justify-content: end;
         align-items: center;
-        width: 100%;
 
         @media only screen and (max-width: 480px) {
-            justify-content: end;
+           width: 50%;
         }
 
     }    
@@ -164,14 +188,23 @@ $primary-color: #FF6060;
 
 .headerLink {
     font-size: 1.5em;
-    padding: 0 0 0 50px;
+    margin: 0 0 0 80px;
     color: $primary-color;
     text-decoration: none;
     @include fontStyle;
     
+    @media only screen and (max-width: 768px) {
+        font-size: 1.2em;
+    }
+
     @media only screen and (max-width: 480px) {
-        padding: 0 0 0 10px;
-       font-size: 80%;
+       font-size: 0.9em;
+       margin: 0 0 0 20px;
+    }
+
+    @media only screen and (max-width: 320px) {
+        font-size: 0.8em;
+        margin: 0 0 0 10px;
     }
 
 }
@@ -215,6 +248,11 @@ $primary-color: #FF6060;
             margin: 0 80px 0 0;
             font-size: 1.3em;
         }
+
+        @media only screen and (max-width: 320px) {
+            font-size: 1em;
+            margin: 0 40px 0 0;
+        }
     }
 
     img {
@@ -252,10 +290,6 @@ $primary-color: #FF6060;
         background-color: transparent;
         padding: 30px 0 0 0;
     }
-
-    @media only screen and (max-width: 480px) {
-        border: 2px solid blue;
-     }
  
 }
 
@@ -265,7 +299,6 @@ $primary-color: #FF6060;
 
     @media only screen and (max-width: 480px) {
        margin: 0 0 30px 0;
-       border: 2px solid red;
        margin: 0 0 20px 0;
        width: 100%;
     }
@@ -297,7 +330,6 @@ $primary-color: #FF6060;
     width: 200px;
     font-size: 16px;
     color: white;
-    font-weight: 100;
     text-decoration: none;
     margin: 230px 0 0 10px;
     @include fontStyle;
@@ -309,9 +341,19 @@ $primary-color: #FF6060;
     }
 
     @media only screen and (max-width: 480px) {
-        margin: 250px 0 0 10px;
+        margin: 150px 0 0 10px;
         width: 300px;
         font-size: 15px;
+    }
+
+    @media only screen and (max-width: 320px) {
+        margin: 100px 0 0 10px;
+        width: 200px;
+        font-size: 12px;
+    }
+
+    h3 {
+        font-weight: 400; 
     }
 }
 
@@ -364,28 +406,66 @@ $primary-color: #FF6060;
         font-size: 1.5em;
         margin: 30px 0 0 0;
         @include fontStyle;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 1.2em;
+            width: 40%;
+            text-align: center;
+         }
     }
 }
 
 
 //// CSS page a propos ////
+
+.bodyDiv {
+    @include column;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        margin: 30px 0 0 0;
+    }
+
+    @media only screen and (max-width: 480px) {
+        justify-content: center;
+    }
+
+    .collapseDiv {
+        @include column;
+        align-items: center;
+    }
+
+}
  
 .bodyDiv .buttonDiv {
     align-items: center;
     justify-content: space-between;
-    width: 1000px;
+    width: 80%;
     border-radius: 5px;
     @include button;
     @include row;
 
     @media only screen and (max-width: 768px) {
-        width: 600px;
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 480px) {
+        width: 100%;
+        height: 40px;
     }
 
     p {
         font-size: 1.6em;
         @include buttonFont;
         @include fontStyle;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1.5em;
+        }
+    
+        @media only screen and (max-width: 480px) {
+            font-size: 1.2em;
+        }
     }
 
     button {
@@ -398,18 +478,25 @@ $primary-color: #FF6060;
         :hover {
             cursor: pointer;
         }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1.8em;
+        }
+    
+        @media only screen and (max-width: 480px) {
+            font-size: 1.5em;
+        }
     }
 }
 
 .bodyDiv .descriptionDiv {
     margin: 0 0 30px 0;
-    width: 1000px;
+    width: 80%;
 
-    @media only screen and (max-width: 768px) {
-        width: 600px;
+    @media only screen and (max-width: 480px) {
+        width: 100%;
+        margin: 0 0 15px 0;
     }
-
-
 }
 
 .bodyDiv .collapseDescription {
@@ -421,6 +508,10 @@ $primary-color: #FF6060;
     font-weight: 400;
     @include column;
     @include fontStyle; 
+
+    @media only screen and (max-width: 480px) {
+        font-size: 0.9em;
+    }
 }
 
 
@@ -440,6 +531,11 @@ $primary-color: #FF6060;
         @include fontStyle;
         color: white;
         font-size: 1.1em;
+
+        @media only screen and (max-width: 480px) {
+            margin: 200px 0 0 0;
+            font-size: 0.9em;
+         }
     }
 }
 
@@ -450,6 +546,11 @@ $primary-color: #FF6060;
     position: relative;
     z-index: 1;
     border-radius: 30px;
+
+    @media only screen and (max-width: 480px) {
+        height: 300px;
+        border-radius: 15px;
+     }
 }
 
 .carouselButtons {
@@ -466,8 +567,11 @@ $primary-color: #FF6060;
 
         @media only screen and (max-width: 768px) {
             font-size: 0.5em;
-    
         }
+
+        @media only screen and (max-width: 480px) {
+            font-size: 0.3em;
+         }
 
         :hover {
             cursor: pointer;
@@ -494,7 +598,7 @@ $primary-color: #FF6060;
 
 .componentRight {
     align-items: end;
-    @include logementComponent;  
+    @include logementComponent; 
 
     
     @media only screen and (max-width: 768px) {
@@ -536,7 +640,11 @@ $primary-color: #FF6060;
 
             @media only screen and (max-width: 768px) {
                 width: 100%;
-             }
+            }
+
+            @media only screen and (max-width: 480px) {
+                height: 40px;
+            }
         }
 
         .descriptionDiv {
@@ -544,12 +652,22 @@ $primary-color: #FF6060;
             background-color: #F6F6F6;
             border-radius: 5px;
 
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+             }
+
             div {
                 margin: 20px;
                 @include fontStyle;
                 color: $primary-color;
                 font-size: 1.1em;
                 height: 200px;
+
+                @media only screen and (max-width: 480px) {
+                    font-size: 0.9em;
+                    height: 150px;
+                    
+                }
             }
         }
     }
@@ -593,8 +711,11 @@ $primary-color: #FF6060;
 
             @media only screen and (max-width: 768px) {
                 width: 100%;
-             }
-            
+            }
+
+            @media only screen and (max-width: 480px) {
+                height: 40px;
+            }
         }
 
         .descriptionDiv {
@@ -602,12 +723,21 @@ $primary-color: #FF6060;
             background-color: #F6F6F6;
             border-radius: 5px;
 
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+             }
+
             div {
                 margin: 20px;
                 @include fontStyle;
                 color: $primary-color;
                 font-size: 1.1em;
                 height: 200px;
+
+                @media only screen and (max-width: 480px) {
+                    font-size: 0.9em;
+                    height: 150px;
+                }
             }
         }
     }
@@ -629,6 +759,16 @@ $primary-color: #FF6060;
     height: 30px;
     display: flex;
     align-items: center;
+    width: 10%;
+    justify-content: center;
+
+    @media only screen and (max-width: 480px) {
+        width: 20%;
+        font-size: 0.7em;
+        padding: 0 15px 0 15px;
+        margin: 10px 10px 0 0;
+        border-radius: 10px;
+     }
 }
 
 .etoilesDiv {
@@ -637,8 +777,17 @@ $primary-color: #FF6060;
     width: 200px;
     margin: 20px 0 0 0;
 
+    @media only screen and (max-width: 480px) {
+        width: 30%;
+        margin: 0;
+     }
+
     .etoile {
         font-size: 1.6em;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 1em;
+         }
     }
 
 
@@ -647,17 +796,31 @@ $primary-color: #FF6060;
 .hostDiv {
     @include row;
     margin: 10px 0 0 0;
+    align-items: center;
+
+    @media only screen and (max-width: 480px) {
+        margin: 0;
+    }
 
     img {
         height: 70px;
         border-radius: 100%;
         margin: 0 0 0 10px;
+
+        @media only screen and (max-width: 480px) {
+            height: 50px;
+        }
     }
 
     p {
         text-align: end;
         width: 100px;
         font-size: 1.1em;
+
+        @media only screen and (max-width: 480px) {
+            font-size: 0.9em;
+            width: 60px;
+        }
     }
     
 }
@@ -674,10 +837,29 @@ $primary-color: #FF6060;
     h1 {
         font-size: 14em;
         margin: 10px 0 50px 0;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 10em;
+        }
+
+        @media only screen and (max-width: 480px) {
+            font-size: 6em;
+        }
     }
 
     h2 {
         font-weight: normal;
+
+        @media only screen and (max-width: 768px) {
+            width: 60%;
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        
+        @media only screen and (max-width: 480px) {
+            font-size: 1em;
+        }
     }
 }
 
@@ -689,24 +871,14 @@ $primary-color: #FF6060;
 .errorLink {
     color: $primary-color;
 
+    @media only screen and (max-width: 480px) {
+        font-size: 0.8em;
+    }
+
     :visited {
         color: $primary-color;
     }
 }
-
-
-//// Animations ///
-
-/*.buttonDiv {
-
-    button {
-        
-        :active {
-
-        }
-    }
-}
-*/
 
 
 

@@ -26,7 +26,9 @@ const Collapse = ({ collapseText, collapseDescription, collapseUl }) => {
                 }}
             >
                 {collapseDescription ? (
-                    <p className="collapseDescription"> {collapseDescription} </p>
+                    <div>
+                        <p className="collapseDescription"> {collapseDescription} </p>
+                    </div>
                 ) : (
                     <div className="collapseUlDiv">
                         <ul>
